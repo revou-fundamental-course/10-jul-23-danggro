@@ -5,7 +5,115 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Kalkulator BMI</h1>
+    <header>
+      <h1>Kalkulator BMI</h1>
+      <p>
+        Body Mass Index (BMI) atau yang sering dikenal dengan Indeks Massa Tubuh
+        (IMT) adalah nilai ukur untuk mengetahui status gizi seseorang
+        berdasarkan berat dan tinggi badannya. Nilai BMI (IMT) juga dapat
+        menjadi alat skrining awal untuk mengetahui risiko seseorang terhadap
+        suatu penyakit.
+      </p>
+    </header>
+    <main>
+      <form class="form-bmi" action="">
+        <div>
+          <label for="#jenis-kelamin">Jenis Kelamin</label>
+          <input type="radio" />
+        </div>
+        <div>
+          <label for="#berat-badan">Berat Badan</label>
+          <input type="number" id="berat-badan" />
+          <span>kg</span>
+        </div>
+        <div>
+          <label for="#usia">Usia</label>
+          <input type="number" id="usia" />
+          <span>tahun</span>
+        </div>
+        <div>
+          <label for="#tinggi-badan">Tinggi Badan</label>
+          <input type="number" id="tinggi-badan" />
+          <span>cm</span>
+        </div>
+      </form>
+      <button id="hitung-bmi">Hitung BMI</button>
+    </main>
+
+    <section id="fitur">
+      <h2>Keunggulan Fitur</h2>
+      <ol>
+        <li>Menghitung berat badan</li>
+        <li>Menentukan kategori berat badan</li>
+        <li>Mempersiapkan program penurunan berat badan</li>
+      </ol>
+    </section>
+
+    <div id="bmi-result">
+      <section id="bmi-display">
+        <h2>BMI anda adalah</h2>
+        <span>23.5</span>
+        <div id="img-bmi-display">
+          <div class="img-bmi-display-item">
+            <img
+              src="assets/bmi-display-male/kekurangan-bb-male.png"
+              alt="kekurangan-bb-male"
+            />
+            <p>Kekurangan Berat Badan</p>
+          </div>
+          <div class="img-bmi-display-item">
+            <img
+              src="assets/bmi-display-male/normal-male.png"
+              alt="normal-male"
+            />
+            <p>Normal atau Sehat</p>
+          </div>
+          <div class="img-bmi-display-item">
+            <img
+              src="assets/bmi-display-male/kelebihan-bb-male.png"
+              alt="kelebihan-bb-male"
+            />
+            <p>Kelebihan Berat Badan</p>
+          </div>
+          <div class="img-bmi-display-item">
+            <img
+              src="assets/bmi-display-male/obesitas-male.png"
+              alt="obesitas-male"
+            />
+            <p>Obesitas</p>
+          </div>
+        </div>
+        <div id="range">
+          <input type="range" />
+          <div id="range-display">
+            <div id="range-kurus"></div>
+            <div id="range-sehat"></div>
+            <div id="range-gemuk"></div>
+            <div id="range-obesitas"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="saran">
+        <h2>Saran</h2>
+        <p>
+          Bila Anda ingin meningkatkan berat badan, Anda perlu mengetahui
+          terlebih dulu berapa banyak kalori yang dibutuhkan tubuh per harinya.
+          Agar tubuh mendapatkan sumber energi yang maksimal untuk beraktivitas.
+          Menambah berat badan harus menambah massa otot bukan menambah massa
+          lemak. Proporsi makanan harus diperhatikan tidak hanya kalori saja
+          perlu zat gizi makro (karbohidrat, protein, lemak) dan mikro (vitamin
+          dan mineral). Anda juga bisa melakukan olahraga rutin agar otot
+          terbentuk dengan optimal. Anda bisa menambahkan asupan kalori Anda
+          sebanyak 300-500 kkal per hari. Misalnya, jika kebutuhan total kalori
+          harian Anda adalah 1700 kkal. Artinya, Anda perlu mengonsumsi makanan
+          dengan total 1700+500 = 2200 kkal per hari.
+        </p>
+      </section>
+
+      <button id="kembali">Kembali</button>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
