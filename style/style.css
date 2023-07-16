@@ -33,6 +33,7 @@ body {
   flex-direction: column;
   align-items: center;
   row-gap: 2rem;
+  overflow-x: hidden;
 }
 
 /* Container */
@@ -46,6 +47,7 @@ body {
   max-width: 832px;
   text-align: center;
   padding: 1.5rem 1rem 1.5rem 1rem;
+  transition: all 600ms ease-in-out;
 }
 
 #header-bmi h1 {
@@ -65,6 +67,7 @@ body {
   max-width: 946px;
   text-align: center;
   width: 100%;
+  transition: all 600ms ease-in-out;
 }
 
 #form-bmi form {
@@ -153,6 +156,7 @@ body {
   max-width: 832px;
   padding: 1.5rem 1rem 1.5rem 1rem;
   width: 100%;
+  transition: all 600ms ease-in-out;
 }
 
 #fitur h2 {
@@ -177,6 +181,9 @@ body {
   row-gap: 2rem;
   align-items: center;
   width: 100%;
+  position: absolute;
+  transform: translateX(100%);
+  transition: all 600ms ease-in-out;
 }
 
 #bmi-result #bmi-display {
@@ -287,6 +294,7 @@ body {
   font-weight: 700;
   color: var(--primary);
   cursor: pointer;
+  margin-bottom: 2rem;
 }
 
 #kembali:hover {

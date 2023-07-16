@@ -7,6 +7,10 @@ function hitungBMI() {
   let textSaran = document.getElementById("text-saran");
   const imageMale = document.getElementById("img-bmi-display-male");
   const imageFemale = document.getElementById("img-bmi-display-female");
+  const headerBMI = document.getElementById("header-bmi");
+  const formBMI = document.getElementById("form-bmi");
+  const fiturBMI = document.getElementById("fitur");
+  const resultBMI = document.getElementById("bmi-result");
 
   for (let i = 0; i < jenisKelamin.length; i++) {
     if (jenisKelamin[i].checked) {
@@ -40,8 +44,11 @@ function hitungBMI() {
         return kelebihanBeratBadan(valueBMI, textSaran, dataTextSaran);
       if (result >= 30) return obesitas(valueBMI, textSaran, dataTextSaran);
     });
-  console.log(result);
 
+  headerBMI.style.transform = "translateX(-170%)";
+  formBMI.style.transform = "translateX(-170%)";
+  fiturBMI.style.transform = "translateX(-170%)";
+  resultBMI.style.transform = "translateX(0%)";
   return result;
 }
 
@@ -83,9 +90,19 @@ function kembali() {
   );
   const imageMale = document.getElementById("img-bmi-display-male");
   const imageFemale = document.getElementById("img-bmi-display-female");
-  imageMale.style.display = "none";
-  imageFemale.style.display = "none";
-  for (let i = 0; i < containerImage.length; i++) {
-    containerImage[i].style.opacity = "30%";
-  }
+  const headerBMI = document.getElementById("header-bmi");
+  const formBMI = document.getElementById("form-bmi");
+  const fiturBMI = document.getElementById("fitur");
+  const resultBMI = document.getElementById("bmi-result");
+  setTimeout(() => {
+    imageMale.style.display = "none";
+    imageFemale.style.display = "none";
+    for (let i = 0; i < containerImage.length; i++) {
+      containerImage[i].style.opacity = "30%";
+    }
+  }, 600);
+  headerBMI.style.transform = "translateX(0%)";
+  formBMI.style.transform = "translateX(0%)";
+  fiturBMI.style.transform = "translateX(0%)";
+  resultBMI.style.transform = "translateX(100%)";
 }
