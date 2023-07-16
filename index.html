@@ -78,7 +78,7 @@
           <span class="satuan">cm</span>
         </div>
       </form>
-      <button id="hitung-bmi">Hitung BMI</button>
+      <button id="hitung-bmi" onclick="hitungBMI()">Hitung BMI</button>
     </main>
 
     <section id="fitur" class="container">
@@ -94,32 +94,32 @@
       <section id="bmi-display" class="container">
         <div>
           <h2>BMI anda adalah</h2>
-          <span id="value-bmi">23.5</span>
+          <span id="value-bmi"></span>
         </div>
         <div id="img-bmi-display">
           <div id="img-bmi-display-male">
-            <div class="img-bmi-display-item">
+            <div class="img-bmi-display-item" id="kekurangan-bb">
               <img
                 src="assets/bmi-display-male/kekurangan-bb-male.png"
                 alt="kekurangan-bb-male"
               />
               <p>Kekurangan Berat Badan</p>
             </div>
-            <div class="img-bmi-display-item">
+            <div class="img-bmi-display-item" id="normal">
               <img
                 src="assets/bmi-display-male/normal-male.png"
                 alt="normal-male"
               />
               <p>Normal atau Sehat</p>
             </div>
-            <div class="img-bmi-display-item">
+            <div class="img-bmi-display-item" id="kelebihan-bb">
               <img
                 src="assets/bmi-display-male/kelebihan-bb-male.png"
                 alt="kelebihan-bb-male"
               />
               <p>Kelebihan Berat Badan</p>
             </div>
-            <div class="img-bmi-display-item">
+            <div class="img-bmi-display-item" id="obesitas">
               <img
                 src="assets/bmi-display-male/obesitas-male.png"
                 alt="obesitas-male"
@@ -141,21 +141,7 @@
 
       <section id="saran" class="container">
         <h2>Saran</h2>
-        <p>
-          Bila Anda ingin meningkatkan berat badan, Anda perlu mengetahui
-          terlebih dulu berapa banyak kalori yang dibutuhkan tubuh per harinya.
-          Agar tubuh mendapatkan sumber energi yang maksimal untuk
-          beraktivitas.<br /><br />
-          Menambah berat badan harus menambah massa otot bukan menambah massa
-          lemak. Proporsi makanan harus diperhatikan tidak hanya kalori saja
-          perlu zat gizi makro (karbohidrat, protein, lemak) dan mikro (vitamin
-          dan mineral). <br /><br />
-          Anda juga bisa melakukan olahraga rutin agar otot terbentuk dengan
-          optimal. Anda bisa menambahkan asupan kalori Anda sebanyak 300-500
-          kkal per hari. Misalnya, jika kebutuhan total kalori harian Anda
-          adalah 1700 kkal. Artinya, Anda perlu mengonsumsi makanan dengan total
-          1700+500 = 2200 kkal per hari.
-        </p>
+        <p id="text-saran"></p>
       </section>
 
       <button id="kembali" class="container">Kembali</button>
