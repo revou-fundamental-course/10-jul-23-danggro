@@ -30,7 +30,9 @@ function hitungBMI() {
   tinggiBadan.value = "";
   valueBMI.innerHTML = result;
 
-  fetch("../assets/text-saran.json")
+  fetch(
+    "https://revou-fundamental-course.github.io/10-jul-23-danggro//assets/text-saran.json"
+  )
     .then((response) => {
       return response.json();
     })
