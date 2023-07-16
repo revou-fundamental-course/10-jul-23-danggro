@@ -140,6 +140,7 @@ body {
   color: var(--primary);
   cursor: pointer;
   border: 5px solid var(--dark-purple);
+  margin-top: 1rem;
 }
 
 #form-bmi #hitung-bmi:hover {
@@ -175,6 +176,7 @@ body {
   flex-direction: column;
   row-gap: 2rem;
   align-items: center;
+  width: 100%;
 }
 
 #bmi-result #bmi-display {
@@ -198,8 +200,9 @@ body {
   color: #fe9292;
 }
 
-#bmi-result #bmi-display #img-bmi-display-male {
-  display: flex;
+#bmi-result #bmi-display #img-bmi-display-male,
+#bmi-result #bmi-display #img-bmi-display-female {
+  display: none;
   justify-content: center;
   column-gap: 1.5rem;
 }
@@ -217,37 +220,45 @@ body {
   font-weight: 500;
 }
 
-#bmi-result #bmi-display #range {
+#bmi-result #bmi-display #range input {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
   width: 100%;
 }
 
-#bmi-result #bmi-display #range input {
-  display: none;
+#bmi-result #bmi-display #range input::-moz-range-thumb {
+  -webkit-appearance: none;
+  padding: 0.5rem;
+  background-color: red;
+  border-radius: 0;
+  border: none;
 }
 
 #bmi-result #bmi-display #range #range-display {
   display: flex;
   height: 1.75rem;
+  margin-top: 1rem;
 }
 
 #bmi-result #bmi-display #range #range-display #range-kekurangan-bb {
   background-color: var(--underweight);
-  flex-grow: 3;
+  flex-grow: calc(18.5 / 30);
 }
 
 #bmi-result #bmi-display #range #range-display #range-normal {
   background-color: var(--normal);
-  flex-grow: 1;
+  flex-grow: calc(6.5 / 30);
 }
 
 #bmi-result #bmi-display #range #range-display #range-kelebihan-bb {
   background-color: var(--overweight);
-  flex-grow: 1;
+  flex-grow: calc(5 / 30);
 }
 
 #bmi-result #bmi-display #range #range-display #range-obesitas {
   background-color: var(--obesite);
-  flex-grow: 1;
+  flex-grow: calc(8 / 30);
 }
 
 /* Saran */
@@ -279,5 +290,5 @@ body {
 }
 
 #kembali:hover {
-  background-color: #3f2e3e;
+  background-color: var(--dark-purple);
 }

@@ -28,7 +28,7 @@
                 value="laki-laki"
                 checked="checked"
               />
-              <img src="assets/avatar-sex/male.png" alt="male" /><br />
+              <img src="assets/avatar-gender/male.png" alt="male" /><br />
               <span>Laki-laki</span>
             </label>
 
@@ -39,7 +39,7 @@
                 name="jenis-kelamin"
                 value="perempuan"
               />
-              <img src="assets/avatar-sex/female.png" alt="female" /><br />
+              <img src="assets/avatar-gender/female.png" alt="female" /><br />
               <span>Perempuan</span>
             </label>
           </div>
@@ -98,31 +98,61 @@
         </div>
         <div id="img-bmi-display">
           <div id="img-bmi-display-male">
-            <div class="img-bmi-display-item" id="kekurangan-bb">
+            <div class="img-bmi-display-item kekurangan-bb">
               <img
                 src="assets/bmi-display-male/kekurangan-bb-male.png"
                 alt="kekurangan-bb-male"
               />
               <p>Kekurangan Berat Badan</p>
             </div>
-            <div class="img-bmi-display-item" id="normal">
+            <div class="img-bmi-display-item normal">
               <img
                 src="assets/bmi-display-male/normal-male.png"
                 alt="normal-male"
               />
               <p>Normal atau Sehat</p>
             </div>
-            <div class="img-bmi-display-item" id="kelebihan-bb">
+            <div class="img-bmi-display-item kelebihan-bb">
               <img
                 src="assets/bmi-display-male/kelebihan-bb-male.png"
                 alt="kelebihan-bb-male"
               />
               <p>Kelebihan Berat Badan</p>
             </div>
-            <div class="img-bmi-display-item" id="obesitas">
+            <div class="img-bmi-display-item obesitas">
               <img
                 src="assets/bmi-display-male/obesitas-male.png"
                 alt="obesitas-male"
+              />
+              <p>Obesitas</p>
+            </div>
+          </div>
+          <div id="img-bmi-display-female">
+            <div class="img-bmi-display-item kekurangan-bb">
+              <img
+                src="assets/bmi-display-female/kekurangan-bb-female.png"
+                alt="kekurangan-bb-female"
+              />
+              <p>Kekurangan Berat Badan</p>
+            </div>
+            <div class="img-bmi-display-item normal">
+              <img
+                src="assets/bmi-display-female/normal-female.png"
+                alt="normal-female"
+              />
+              <p>Normal atau Sehat</p>
+            </div>
+            <div class="img-bmi-display-item kelebihan-bb">
+              <img
+                src="assets/bmi-display-female/kelebihan-bb-female.png"
+                alt="kelebihan-bb-female"
+              />
+              <p>Kelebihan Berat Badan</p>
+            </div>
+            <div class="img-bmi-display-item obesitas">
+              <img
+                src="assets/bmi-display-female/obesitas-female.png"
+                alt="obesitas-female"
               />
               <p>Obesitas</p>
             </div>
@@ -144,7 +174,9 @@
         <p id="text-saran"></p>
       </section>
 
-      <button id="kembali" class="container">Kembali</button>
+      <button id="kembali" class="container" onclick="kembali()">
+        Kembali
+      </button>
     </div>
 
     <script src="script/script.js"></script>
