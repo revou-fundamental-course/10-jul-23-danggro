@@ -31,7 +31,7 @@ function hitungBMI() {
   valueBMI.innerHTML = result;
 
   fetch(
-    "https://revou-fundamental-course.github.io/10-jul-23-danggro//assets/text-saran.json"
+    "https://revou-fundamental-course.github.io/10-jul-23-danggro/assets/text-saran.json"
   )
     .then((response) => {
       return response.json();
