@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <title>Kalkulator BMI</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
-    <header>
+    <header id="header-bmi" class="container">
       <h1>Kalkulator BMI</h1>
       <p>
         Body Mass Index (BMI) atau yang sering dikenal dengan Indeks Massa Tubuh
@@ -15,32 +15,73 @@
         suatu penyakit.
       </p>
     </header>
-    <main>
-      <form class="form-bmi" action="">
-        <div>
-          <label for="#jenis-kelamin">Jenis Kelamin</label>
-          <input type="radio" />
+    <main id="form-bmi" class="container">
+      <form action="">
+        <div id="jenis-kelamin">
+          <span class="title-input">Jenis Kelamin</span>
+          <div class="input-radio">
+            <label for="laki-laki" class="container-radio">
+              <input
+                type="radio"
+                id="laki-laki"
+                name="jenis-kelamin"
+                value="laki-laki"
+                checked="checked"
+              />
+              <img src="assets/avatar-sex/male.png" alt="male" /><br />
+              <span>Laki-laki</span>
+            </label>
+
+            <label for="perempuan" class="container-radio">
+              <input
+                type="radio"
+                id="perempuan"
+                name="jenis-kelamin"
+                value="perempuan"
+              />
+              <img src="assets/avatar-sex/female.png" alt="female" /><br />
+              <span>Perempuan</span>
+            </label>
+          </div>
         </div>
         <div>
-          <label for="#berat-badan">Berat Badan</label>
-          <input type="number" id="berat-badan" />
-          <span>kg</span>
+          <label class="title-input" for="berat-badan">Berat Badan</label>
+          <input
+            class="input-number"
+            type="number"
+            id="berat-badan"
+            min="1"
+            max="200"
+          />
+          <span class="satuan">kg</span>
         </div>
         <div>
-          <label for="#usia">Usia</label>
-          <input type="number" id="usia" />
-          <span>tahun</span>
+          <label class="title-input" for="usia">Usia</label>
+          <input
+            class="input-number"
+            type="number"
+            id="usia"
+            min="1"
+            max="150"
+          />
+          <span class="satuan">tahun</span>
         </div>
         <div>
-          <label for="#tinggi-badan">Tinggi Badan</label>
-          <input type="number" id="tinggi-badan" />
-          <span>cm</span>
+          <label class="title-input" for="tinggi-badan">Tinggi Badan</label>
+          <input
+            class="input-number"
+            type="number"
+            id="tinggi-badan"
+            min="1"
+            max="300"
+          />
+          <span class="satuan">cm</span>
         </div>
       </form>
       <button id="hitung-bmi">Hitung BMI</button>
     </main>
 
-    <section id="fitur">
+    <section id="fitur" class="container">
       <h2>Keunggulan Fitur</h2>
       <ol>
         <li>Menghitung berat badan</li>
@@ -50,70 +91,76 @@
     </section>
 
     <div id="bmi-result">
-      <section id="bmi-display">
-        <h2>BMI anda adalah</h2>
-        <span>23.5</span>
+      <section id="bmi-display" class="container">
+        <div>
+          <h2>BMI anda adalah</h2>
+          <span id="value-bmi">23.5</span>
+        </div>
         <div id="img-bmi-display">
-          <div class="img-bmi-display-item">
-            <img
-              src="assets/bmi-display-male/kekurangan-bb-male.png"
-              alt="kekurangan-bb-male"
-            />
-            <p>Kekurangan Berat Badan</p>
-          </div>
-          <div class="img-bmi-display-item">
-            <img
-              src="assets/bmi-display-male/normal-male.png"
-              alt="normal-male"
-            />
-            <p>Normal atau Sehat</p>
-          </div>
-          <div class="img-bmi-display-item">
-            <img
-              src="assets/bmi-display-male/kelebihan-bb-male.png"
-              alt="kelebihan-bb-male"
-            />
-            <p>Kelebihan Berat Badan</p>
-          </div>
-          <div class="img-bmi-display-item">
-            <img
-              src="assets/bmi-display-male/obesitas-male.png"
-              alt="obesitas-male"
-            />
-            <p>Obesitas</p>
+          <div id="img-bmi-display-male">
+            <div class="img-bmi-display-item">
+              <img
+                src="assets/bmi-display-male/kekurangan-bb-male.png"
+                alt="kekurangan-bb-male"
+              />
+              <p>Kekurangan Berat Badan</p>
+            </div>
+            <div class="img-bmi-display-item">
+              <img
+                src="assets/bmi-display-male/normal-male.png"
+                alt="normal-male"
+              />
+              <p>Normal atau Sehat</p>
+            </div>
+            <div class="img-bmi-display-item">
+              <img
+                src="assets/bmi-display-male/kelebihan-bb-male.png"
+                alt="kelebihan-bb-male"
+              />
+              <p>Kelebihan Berat Badan</p>
+            </div>
+            <div class="img-bmi-display-item">
+              <img
+                src="assets/bmi-display-male/obesitas-male.png"
+                alt="obesitas-male"
+              />
+              <p>Obesitas</p>
+            </div>
           </div>
         </div>
         <div id="range">
           <input type="range" />
           <div id="range-display">
-            <div id="range-kurus"></div>
-            <div id="range-sehat"></div>
-            <div id="range-gemuk"></div>
+            <div id="range-kekurangan-bb"></div>
+            <div id="range-normal"></div>
+            <div id="range-kelebihan-bb"></div>
             <div id="range-obesitas"></div>
           </div>
         </div>
       </section>
 
-      <section id="saran">
+      <section id="saran" class="container">
         <h2>Saran</h2>
         <p>
           Bila Anda ingin meningkatkan berat badan, Anda perlu mengetahui
           terlebih dulu berapa banyak kalori yang dibutuhkan tubuh per harinya.
-          Agar tubuh mendapatkan sumber energi yang maksimal untuk beraktivitas.
+          Agar tubuh mendapatkan sumber energi yang maksimal untuk
+          beraktivitas.<br /><br />
           Menambah berat badan harus menambah massa otot bukan menambah massa
           lemak. Proporsi makanan harus diperhatikan tidak hanya kalori saja
           perlu zat gizi makro (karbohidrat, protein, lemak) dan mikro (vitamin
-          dan mineral). Anda juga bisa melakukan olahraga rutin agar otot
-          terbentuk dengan optimal. Anda bisa menambahkan asupan kalori Anda
-          sebanyak 300-500 kkal per hari. Misalnya, jika kebutuhan total kalori
-          harian Anda adalah 1700 kkal. Artinya, Anda perlu mengonsumsi makanan
-          dengan total 1700+500 = 2200 kkal per hari.
+          dan mineral). <br /><br />
+          Anda juga bisa melakukan olahraga rutin agar otot terbentuk dengan
+          optimal. Anda bisa menambahkan asupan kalori Anda sebanyak 300-500
+          kkal per hari. Misalnya, jika kebutuhan total kalori harian Anda
+          adalah 1700 kkal. Artinya, Anda perlu mengonsumsi makanan dengan total
+          1700+500 = 2200 kkal per hari.
         </p>
       </section>
 
-      <button id="kembali">Kembali</button>
+      <button id="kembali" class="container">Kembali</button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script/script.js"></script>
   </body>
 </html>
