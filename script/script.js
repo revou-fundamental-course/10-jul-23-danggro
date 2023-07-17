@@ -1,60 +1,82 @@
 function hitungBMI() {
   const jenisKelamin = document.getElementsByName("jenis-kelamin");
+
+  const containerBeratBadan = document.getElementById("container-bb");
+  const containerUsia = document.getElementById("container-usia");
+  const containerTinggiBadan = document.getElementById("container-tb");
+
   let beratBadan = document.getElementById("berat-badan");
   let usia = document.getElementById("usia");
   let tinggiBadan = document.getElementById("tinggi-badan");
+
   let valueBMI = document.getElementById("value-bmi");
   let textSaran = document.getElementById("text-saran");
+
   const imageMale = document.getElementById("img-bmi-display-male");
   const imageFemale = document.getElementById("img-bmi-display-female");
+
   const headerBMI = document.getElementById("header-bmi");
   const formBMI = document.getElementById("form-bmi");
   const fiturBMI = document.getElementById("fitur");
+
   const resultBMI = document.getElementById("bmi-result");
+
   const bubble = document.getElementById("bubble");
 
-  for (let i = 0; i < jenisKelamin.length; i++) {
-    if (jenisKelamin[i].checked) {
-      if (jenisKelamin[i].value == "laki-laki") {
-        imageMale.style.display = "flex";
-      } else {
-        imageFemale.style.display = "flex";
+  if (!beratBadan.value || !usia.value || !tinggiBadan.value) {
+    if (beratBadan.value == "") {
+      validation(containerBeratBadan);
+    }
+    if (usia.value == "") {
+      validation(containerUsia);
+    }
+    if (tinggiBadan.value == "") {
+      validation(containerTinggiBadan);
+    }
+  } else {
+    for (let i = 0; i < jenisKelamin.length; i++) {
+      if (jenisKelamin[i].checked) {
+        if (jenisKelamin[i].value == "laki-laki") {
+          imageMale.style.display = "flex";
+        } else {
+          imageFemale.style.display = "flex";
+        }
       }
     }
+
+    let result = (beratBadan.value / (tinggiBadan.value / 100) ** 2).toFixed(1);
+
+    beratBadan.value = "";
+    usia.value = "";
+    tinggiBadan.value = "";
+    valueBMI.innerHTML = result;
+
+    bubble.innerHTML = result;
+    bubble.style.left = `calc((${result}/40)*100%)`;
+
+    fetch(
+      "https://revou-fundamental-course.github.io/10-jul-23-danggro/assets/text-saran.json"
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        if (result < 18.5)
+          return kekuranganBeratBadan(valueBMI, textSaran, data, bubble);
+        if (result >= 18.5 && result < 25)
+          return normal(valueBMI, textSaran, data, bubble);
+        if (result >= 25 && result < 30)
+          return kelebihanBeratBadan(valueBMI, textSaran, data, bubble);
+        if (result >= 30) return obesitas(valueBMI, textSaran, data, bubble);
+      });
+
+    headerBMI.style.transform = "translateX(-170%)";
+    formBMI.style.transform = "translateX(-170%)";
+    fiturBMI.style.transform = "translateX(-170%)";
+    resultBMI.style.transform = "translateX(0%)";
+
+    return result;
   }
-
-  let result = (beratBadan.value / (tinggiBadan.value / 100) ** 2).toFixed(1);
-
-  beratBadan.value = "";
-  usia.value = "";
-  tinggiBadan.value = "";
-  valueBMI.innerHTML = result;
-
-  bubble.innerHTML = result;
-  bubble.style.left = `calc((${result}/40)*100%)`;
-
-  fetch(
-    "https://revou-fundamental-course.github.io/10-jul-23-danggro/assets/text-saran.json"
-  )
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      if (result < 18.5)
-        return kekuranganBeratBadan(valueBMI, textSaran, data, bubble);
-      if (result >= 18.5 && result < 25)
-        return normal(valueBMI, textSaran, data, bubble);
-      if (result >= 25 && result < 30)
-        return kelebihanBeratBadan(valueBMI, textSaran, data, bubble);
-      if (result >= 30) return obesitas(valueBMI, textSaran, data, bubble);
-    });
-
-  headerBMI.style.transform = "translateX(-170%)";
-  formBMI.style.transform = "translateX(-170%)";
-  fiturBMI.style.transform = "translateX(-170%)";
-  resultBMI.style.transform = "translateX(0%)";
-
-  return result;
 }
 
 function kekuranganBeratBadan(valueBMI, textSaran, dataTextSaran, bubble) {
@@ -107,9 +129,11 @@ function kembali() {
   const formBMI = document.getElementById("form-bmi");
   const fiturBMI = document.getElementById("fitur");
   const resultBMI = document.getElementById("bmi-result");
+  let textSaran = document.getElementById("text-saran");
   setTimeout(() => {
     imageMale.style.display = "none";
     imageFemale.style.display = "none";
+    textSaran.innerHTML = "";
     for (let i = 0; i < containerImage.length; i++) {
       containerImage[i].style.opacity = "30%";
     }
@@ -118,4 +142,22 @@ function kembali() {
   formBMI.style.transform = "translateX(0%)";
   fiturBMI.style.transform = "translateX(0%)";
   resultBMI.style.transform = "translateX(100%)";
+}
+
+function validation(container) {
+  container.style.setProperty("--afterOpacity", 100);
+  container.style.setProperty("--afterBottom", "9%");
+}
+
+function removeValidation(event) {
+  if (event.target.value) {
+    event.target.parentElement.style.setProperty("--afterOpacity", 0);
+    event.target.parentElement.style.setProperty("--afterBottom", "0%");
+  }
+}
+
+function maxLengthValidation(event) {
+  if (event.target.value.length > event.target.maxLength) {
+    event.target.value = event.target.value.slice(0, event.target.maxLength);
+  }
 }

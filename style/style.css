@@ -315,3 +315,55 @@ body {
 #kembali:hover {
   background-color: var(--dark-purple);
 }
+
+/* Validasi */
+#container-bb,
+#container-usia,
+#container-tb {
+  position: relative;
+}
+
+#container-bb::after {
+  content: "Berat badan harus diisi";
+  display: block;
+  position: absolute;
+  opacity: var(--afterOpacity, 0);
+  bottom: var(--afterBottom, 0);
+  width: fit-content;
+  margin-top: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  background-color: var(--dark-purple);
+  font-size: 14px;
+  color: var(--primary);
+  transition: all 250ms ease-out;
+}
+
+#container-usia::after {
+  content: "Usia harus diisi";
+  display: block;
+  position: absolute;
+  opacity: var(--afterOpacity, 0);
+  bottom: var(--afterBottom, 0);
+  width: fit-content;
+  margin-top: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  background-color: var(--dark-purple);
+  font-size: 14px;
+  color: var(--primary);
+  transition: all 250ms ease-out;
+}
+
+#container-tb::after {
+  content: "Tinggi badan harus diisi";
+  display: block;
+  position: absolute;
+  opacity: var(--afterOpacity, 0);
+  bottom: var(--afterBottom, 0);
+  width: fit-content;
+  margin-top: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  background-color: var(--dark-purple);
+  font-size: 14px;
+  color: var(--primary);
+  transition: all 250ms ease-out;
+}

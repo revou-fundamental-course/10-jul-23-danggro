@@ -44,7 +44,7 @@
             </label>
           </div>
         </div>
-        <div>
+        <div id="container-bb">
           <label class="title-input" for="berat-badan">Berat Badan</label>
           <input
             class="input-number"
@@ -52,10 +52,13 @@
             id="berat-badan"
             min="1"
             max="200"
+            maxlength="3"
+            oninput="maxLengthValidation(event)"
+            onchange="removeValidation(event)"
           />
           <span class="satuan">kg</span>
         </div>
-        <div>
+        <div id="container-usia">
           <label class="title-input" for="usia">Usia</label>
           <input
             class="input-number"
@@ -63,10 +66,13 @@
             id="usia"
             min="1"
             max="150"
+            maxlength="3"
+            oninput="maxLengthValidation(event)"
+            onchange="removeValidation(event)"
           />
           <span class="satuan">tahun</span>
         </div>
-        <div>
+        <div id="container-tb">
           <label class="title-input" for="tinggi-badan">Tinggi Badan</label>
           <input
             class="input-number"
@@ -74,6 +80,9 @@
             id="tinggi-badan"
             min="1"
             max="300"
+            maxlength="3"
+            oninput="maxLengthValidation(event)"
+            onchange="removeValidation(event)"
           />
           <span class="satuan">cm</span>
         </div>
@@ -160,10 +169,7 @@
         </div>
         <div id="range">
           <div id="container-range-bubble">
-            <div id="container-bubble">
-              <span id="bubble">23</span>
-              <span id="after-bubble"></span>
-            </div>
+            <span id="bubble"></span>
           </div>
           <div id="range-display">
             <div id="range-kekurangan-bb"></div>
