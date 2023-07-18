@@ -119,8 +119,8 @@ body {
 }
 
 #form-bmi .input-number {
-  width: 80px;
-  padding: 0.5rem 1rem 0.5rem 1rem;
+  width: 85px;
+  padding: 0.5rem 1rem;
   background-color: var(--primary);
   color: var(--dark-purple);
   border: 4px solid var(--dark-purple);
@@ -133,6 +133,7 @@ body {
 #form-bmi .satuan {
   font-size: 28px;
   font-weight: 500;
+  margin-left: 0.5rem;
 }
 
 #form-bmi #hitung-bmi {
@@ -260,7 +261,6 @@ body {
 #bmi-result #bmi-display #range #range-display {
   display: flex;
   height: 1.75rem;
-  /* margin-top: 0.5rem; */
 }
 
 #bmi-result #bmi-display #range #range-display #range-kekurangan-bb {
@@ -280,7 +280,44 @@ body {
 
 #bmi-result #bmi-display #range #range-display #range-obesitas {
   background-color: var(--obesite);
-  flex-grow: calc(10.2 / 40);
+  flex-grow: calc(10 / 40);
+}
+
+#bmi-result #bmi-display #range #num-range-display {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+#bmi-result #bmi-display #range #num-range-kekurangan-bb {
+  text-align: left;
+  display: block;
+  font-size: 20px;
+  color: var(--underweight);
+  width: calc((18.5 / 40) * 100%);
+}
+
+#bmi-result #bmi-display #range #num-range-normal {
+  text-align: left;
+  display: block;
+  font-size: 20px;
+  color: var(--normal);
+  width: calc((6.5 / 40) * 100%);
+}
+
+#bmi-result #bmi-display #range #num-range-kelebihan-bb {
+  text-align: left;
+  display: block;
+  font-size: 20px;
+  color: var(--overweight);
+  width: calc((5 / 40) * 100%);
+}
+
+#bmi-result #bmi-display #range #num-range-obesitas {
+  text-align: left;
+  display: block;
+  font-size: 20px;
+  color: var(--obesite);
+  width: calc((10 / 40) * 100%);
 }
 
 /* Saran */

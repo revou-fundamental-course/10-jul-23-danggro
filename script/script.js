@@ -52,7 +52,11 @@ function hitungBMI() {
     valueBMI.innerHTML = result;
 
     bubble.innerHTML = result;
-    bubble.style.left = `calc((${result}/40)*100%)`;
+    if (result > 37.1) {
+      bubble.style.right = `0`;
+    } else {
+      bubble.style.left = `calc((${result}/40)*100%)`;
+    }
 
     fetch(
       "https://revou-fundamental-course.github.io/10-jul-23-danggro/assets/text-saran.json"
@@ -160,4 +164,12 @@ function maxLengthValidation(event) {
   if (event.target.value.length > event.target.maxLength) {
     event.target.value = event.target.value.slice(0, event.target.maxLength);
   }
+}
+
+function onlyNumberValidation(event) {
+  if (
+    isNaN(String.fromCharCode(event.keyCode)) ||
+    ["Space"].includes(arguments[0].code)
+  )
+    return false;
 }
