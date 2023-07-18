@@ -5,103 +5,104 @@
     <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
-    <header id="header-bmi" class="container">
-      <h1>Kalkulator BMI</h1>
-      <p>
-        Body Mass Index (BMI) atau yang sering dikenal dengan Indeks Massa Tubuh
-        (IMT) adalah nilai ukur untuk mengetahui status gizi seseorang
-        berdasarkan berat dan tinggi badannya. Nilai BMI (IMT) juga dapat
-        menjadi alat skrining awal untuk mengetahui risiko seseorang terhadap
-        suatu penyakit.
-      </p>
-    </header>
-    <main id="form-bmi" class="container">
-      <form action="">
-        <div id="jenis-kelamin">
-          <span class="title-input">Jenis Kelamin</span>
-          <div class="input-radio">
-            <label for="laki-laki" class="container-radio">
-              <input
-                type="radio"
-                id="laki-laki"
-                name="jenis-kelamin"
-                value="laki-laki"
-                checked="checked"
-              />
-              <img src="assets/avatar-gender/male.png" alt="male" /><br />
-              <span>Laki-laki</span>
-            </label>
+    <div id="container-home">
+      <header id="header-bmi" class="container">
+        <h1>Kalkulator BMI</h1>
+        <p>
+          Body Mass Index (BMI) atau yang sering dikenal dengan Indeks Massa
+          Tubuh (IMT) adalah nilai ukur untuk mengetahui status gizi seseorang
+          berdasarkan berat dan tinggi badannya. Nilai BMI (IMT) juga dapat
+          menjadi alat skrining awal untuk mengetahui risiko seseorang terhadap
+          suatu penyakit.
+        </p>
+      </header>
+      <main id="form-bmi" class="container">
+        <form action="">
+          <div id="jenis-kelamin">
+            <span class="title-input">Jenis Kelamin</span>
+            <div class="input-radio">
+              <label for="laki-laki" class="container-radio">
+                <input
+                  type="radio"
+                  id="laki-laki"
+                  name="jenis-kelamin"
+                  value="laki-laki"
+                  checked="checked"
+                />
+                <img src="assets/avatar-gender/male.png" alt="male" /><br />
+                <span>Laki-laki</span>
+              </label>
 
-            <label for="perempuan" class="container-radio">
-              <input
-                type="radio"
-                id="perempuan"
-                name="jenis-kelamin"
-                value="perempuan"
-              />
-              <img src="assets/avatar-gender/female.png" alt="female" /><br />
-              <span>Perempuan</span>
-            </label>
+              <label for="perempuan" class="container-radio">
+                <input
+                  type="radio"
+                  id="perempuan"
+                  name="jenis-kelamin"
+                  value="perempuan"
+                />
+                <img src="assets/avatar-gender/female.png" alt="female" /><br />
+                <span>Perempuan</span>
+              </label>
+            </div>
           </div>
-        </div>
-        <div id="container-bb">
-          <label class="title-input" for="berat-badan">Berat Badan</label>
-          <input
-            class="input-number"
-            type="number"
-            id="berat-badan"
-            min="1"
-            max="200"
-            maxlength="3"
-            oninput="maxLengthValidation(event)"
-            onchange="removeValidation(event)"
-            onkeypress="return onlyNumberValidation(event)"
-          />
-          <span class="satuan">kg</span>
-        </div>
-        <div id="container-usia">
-          <label class="title-input" for="usia">Usia</label>
-          <input
-            class="input-number"
-            type="number"
-            id="usia"
-            min="1"
-            max="150"
-            maxlength="3"
-            oninput="maxLengthValidation(event)"
-            onchange="removeValidation(event)"
-            onkeypress="return onlyNumberValidation(event)"
-          />
-          <span class="satuan">tahun</span>
-        </div>
-        <div id="container-tb">
-          <label class="title-input" for="tinggi-badan">Tinggi Badan</label>
-          <input
-            class="input-number"
-            type="number"
-            id="tinggi-badan"
-            min="1"
-            max="300"
-            maxlength="3"
-            oninput="maxLengthValidation(event)"
-            onchange="removeValidation(event)"
-            onkeypress="return onlyNumberValidation(event)"
-          />
-          <span class="satuan">cm</span>
-        </div>
-      </form>
-      <button id="hitung-bmi" onclick="hitungBMI()">Hitung BMI</button>
-    </main>
+          <div id="container-bb">
+            <label class="title-input" for="berat-badan">Berat Badan</label>
+            <input
+              class="input-number"
+              type="number"
+              id="berat-badan"
+              min="1"
+              max="200"
+              maxlength="3"
+              oninput="maxLengthValidation(event)"
+              onchange="removeValidation(event)"
+              onkeypress="return onlyNumberValidation(event)"
+            />
+            <span class="satuan">kg</span>
+          </div>
+          <div id="container-usia">
+            <label class="title-input" for="usia">Usia</label>
+            <input
+              class="input-number"
+              type="number"
+              id="usia"
+              min="1"
+              max="150"
+              maxlength="3"
+              oninput="maxLengthValidation(event)"
+              onchange="removeValidation(event)"
+              onkeypress="return onlyNumberValidation(event)"
+            />
+            <span class="satuan">tahun</span>
+          </div>
+          <div id="container-tb">
+            <label class="title-input" for="tinggi-badan">Tinggi Badan</label>
+            <input
+              class="input-number"
+              type="number"
+              id="tinggi-badan"
+              min="1"
+              max="300"
+              maxlength="3"
+              oninput="maxLengthValidation(event)"
+              onchange="removeValidation(event)"
+              onkeypress="return onlyNumberValidation(event)"
+            />
+            <span class="satuan">cm</span>
+          </div>
+        </form>
+        <button id="hitung-bmi" onclick="hitungBMI()">Hitung BMI</button>
+      </main>
 
-    <section id="fitur" class="container">
-      <h2>Keunggulan Fitur</h2>
-      <ol>
-        <li>Menghitung berat badan</li>
-        <li>Menentukan kategori berat badan</li>
-        <li>Mempersiapkan program penurunan berat badan</li>
-      </ol>
-    </section>
-
+      <section id="fitur" class="container">
+        <h2>Keunggulan Fitur</h2>
+        <ol>
+          <li>Menghitung berat badan</li>
+          <li>Menentukan kategori berat badan</li>
+          <li>Mempersiapkan program penurunan berat badan</li>
+        </ol>
+      </section>
+    </div>
     <div id="bmi-result">
       <section id="bmi-display" class="container">
         <div>

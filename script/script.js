@@ -23,6 +23,8 @@ function hitungBMI() {
 
   const bubble = document.getElementById("bubble");
 
+  const containerHome = document.getElementById("container-home");
+
   if (!beratBadan.value || !usia.value || !tinggiBadan.value) {
     if (beratBadan.value == "") {
       validation(containerBeratBadan);
@@ -74,9 +76,10 @@ function hitungBMI() {
         if (result >= 30) return obesitas(valueBMI, textSaran, data, bubble);
       });
 
-    headerBMI.style.transform = "translateX(-170%)";
-    formBMI.style.transform = "translateX(-170%)";
-    fiturBMI.style.transform = "translateX(-170%)";
+    containerHome.style.transform = "translateX(-100%)";
+    // headerBMI.style.transform = "translateX(170%)";
+    // formBMI.style.transform = "translateX(170%)";
+    // fiturBMI.style.transform = "translateX(170%)";
     resultBMI.style.transform = "translateX(0%)";
 
     return result;
@@ -134,6 +137,9 @@ function kembali() {
   const fiturBMI = document.getElementById("fitur");
   const resultBMI = document.getElementById("bmi-result");
   let textSaran = document.getElementById("text-saran");
+  const containerHome = document.getElementById("container-home");
+
+  window.scrollTo(0, 0);
   setTimeout(() => {
     imageMale.style.display = "none";
     imageFemale.style.display = "none";
@@ -142,9 +148,10 @@ function kembali() {
       containerImage[i].style.opacity = "30%";
     }
   }, 600);
-  headerBMI.style.transform = "translateX(0%)";
-  formBMI.style.transform = "translateX(0%)";
-  fiturBMI.style.transform = "translateX(0%)";
+  // headerBMI.style.transform = "translateX(0%)";
+  // formBMI.style.transform = "translateX(0%)";
+  // fiturBMI.style.transform = "translateX(0%)";
+  containerHome.style.transform = "translateX(0%)";
   resultBMI.style.transform = "translateX(100%)";
 }
 

@@ -23,16 +23,16 @@
   list-style: none;
 }
 
+/* HTML */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Body */
 body {
   font-family: "Roboto Condensed", sans-serif;
   background-color: var(--primary);
   color: var(--primary);
-  padding: 3rem 2rem 3rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 2rem;
   overflow-x: hidden;
 }
 
@@ -42,11 +42,22 @@ body {
   border: 6px solid var(--dark-purple);
 }
 
+/* Container Home */
+#container-home {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+  padding: 3rem 2rem;
+  row-gap: 2rem;
+  transition: all 600ms ease-in-out;
+}
+
 /* Header BMI */
 #header-bmi {
   max-width: 832px;
   text-align: center;
-  padding: 1.5rem 1rem 1.5rem 1rem;
+  padding: 1.5rem 2rem;
   transition: all 600ms ease-in-out;
 }
 
@@ -119,7 +130,7 @@ body {
 }
 
 #form-bmi .input-number {
-  width: 85px;
+  width: 83px;
   padding: 0.5rem 1rem;
   background-color: var(--primary);
   color: var(--dark-purple);
@@ -155,7 +166,7 @@ body {
 /* Keunggulan Fitur */
 #fitur {
   max-width: 832px;
-  padding: 1.5rem 1rem 1.5rem 1rem;
+  padding: 1.5rem 2rem;
   width: 100%;
   transition: all 600ms ease-in-out;
 }
@@ -181,10 +192,12 @@ body {
   flex-direction: column;
   row-gap: 2rem;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   position: absolute;
+  top: 0;
   transform: translateX(100%);
   transition: all 600ms ease-in-out;
+  padding: 3rem 2rem;
 }
 
 #bmi-result #bmi-display {
