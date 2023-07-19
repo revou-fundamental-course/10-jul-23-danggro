@@ -68,7 +68,7 @@ p, li{
 #container-home {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100vw;
   padding: 1.5rem;
   row-gap: 1rem;
   transition: all 600ms ease-in-out;
@@ -522,7 +522,7 @@ input::-webkit-inner-spin-button {
   p, li{
     font-size: 18px;
   }
-
+  
   /* Container Home */
   .row{
     flex-direction: column;
@@ -650,7 +650,8 @@ input::-webkit-inner-spin-button {
   }
 
   /* Container Home */
-  #container-home{
+  #container-home, #container-result{
+    padding: 1rem;
     gap: 0.5rem;
   }
 
