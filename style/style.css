@@ -158,6 +158,11 @@ p, li{
   opacity: 100%;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 #form-bmi .input-number {
   width: 72px;
   padding: 0.5rem 0.75rem;

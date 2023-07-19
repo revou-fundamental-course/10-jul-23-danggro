@@ -92,7 +92,7 @@ function hitungBMI() {
       bubble.style.left = `calc((${result}/40)*100%)`;
     }
 
-    //Pengambilan data di dalam file text-saran.json
+    //Pengambilan data di dalam file text-saran.json, sebenernya gak perlu pake json dan fetch, cuman pingin aja :)
     fetch(
       "https://revou-fundamental-course.github.io/10-jul-23-danggro/assets/text-saran.json"
     )
@@ -110,9 +110,9 @@ function hitungBMI() {
         //Kondisi nilai BMI yang sesuai dengan range BMI
         if (result < 18.5)
           return display(valueBMI, textSaran, data["kekurangan-bb"], bubble);
-        if (result >= 18.5 && result < 25)
+        if (result < 25)
           return display(valueBMI, textSaran, data["normal"], bubble);
-        if (result >= 25 && result < 30)
+        if (result < 30)
           return display(valueBMI, textSaran, data["kelebihan-bb"], bubble);
         if (result >= 30)
           return display(valueBMI, textSaran, data["obesitas"], bubble);
