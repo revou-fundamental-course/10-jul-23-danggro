@@ -5,8 +5,10 @@
     <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
+    <!-- Container page home -->
     <div id="container-home">
       <div class="row">
+        <!-- Header page home -->
         <header id="header-bmi" class="container">
           <h1>Kalkulator BMI</h1>
           <p>
@@ -17,6 +19,8 @@
             terhadap suatu penyakit.
           </p>
         </header>
+
+        <!-- Some explanation -->
         <div id="add-explanation" class="container">
           <p>
             kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita hamil
@@ -26,12 +30,18 @@
           </p>
         </div>
       </div>
+
+      <!-- Container bottom page home -->
       <div id="bottom">
+        <!-- Container form -->
         <main id="form-bmi" class="row">
+          <!-- Container form Jenis Kelamin and Umur -->
           <div id="container-jk-u">
+            <!-- Input Jenis Kelamin -->
             <div id="jenis-kelamin" class="container">
               <h2>Jenis Kelamin</h2>
               <div id="input-radio">
+                <!-- Option Jenis Kelamin Laki-laki -->
                 <label for="laki-laki" class="container-radio">
                   <input
                     type="radio"
@@ -44,6 +54,7 @@
                   <span>Laki-laki</span>
                 </label>
 
+                <!-- Option Jenis Kelamin Perempuan -->
                 <label for="perempuan" class="container-radio">
                   <input
                     type="radio"
@@ -59,6 +70,8 @@
                 </label>
               </div>
             </div>
+
+            <!-- Container Input Usia -->
             <div id="container-usia" class="container">
               <label for="usia"><h2>Usia</h2></label>
               <div>
@@ -78,7 +91,9 @@
             </div>
           </div>
 
+          <!-- Container form Berat Badan and Tinggi Badan -->
           <div id="container-bb-tb">
+            <!-- Container Input Berat Badan -->
             <div id="container-bb" class="container">
               <label for="berat-badan"><h2>Berat Badan</h2></label>
               <div>
@@ -96,6 +111,7 @@
                 <span class="satuan">kg</span>
               </div>
             </div>
+            <!-- Container Input Tinggi Badan -->
             <div id="container-tb" class="container">
               <label for="tinggi-badan"><h2>Tinggi Badan</h2></label>
               <div>
@@ -114,6 +130,8 @@
               </div>
             </div>
           </div>
+
+          <!-- Container Made By and button Hitung -->
           <div id="container-mb-b">
             <div id="made-by" class="container">
               Made by<br />
@@ -123,7 +141,9 @@
           </div>
         </main>
 
+        <!-- Container Fitur, Rumus, and Social Media -->
         <div class="row">
+          <!-- Container Fitur -->
           <div id="fitur" class="container">
             <h2>Keunggulan Fitur</h2>
             <ol>
@@ -132,10 +152,14 @@
               <li>Mempersiapkan program penurunan berat badan</li>
             </ol>
           </div>
+
+          <!-- Container Rumus -->
           <div id="rumus" class="container">
             <h2>Rumus Perhitungan</h2>
             <p>BMI = Berat Badan / (Tinggi Badan)^2</p>
           </div>
+
+          <!-- Container Social Media -->
           <div id="container-social">
             <div id="sosial" class="container"><h2>Social Media</h2></div>
             <div id="container-link">
@@ -163,9 +187,13 @@
       </div>
     </div>
 
+    <!-- Container Page Result -->
     <div id="container-result">
+      <!-- Container left side -->
       <div id="left">
+        <!-- Container information -->
         <div id="container-info">
+          <!-- Container identity Jenis Kelamin and Usia -->
           <div id="identity" class="container">
             <img src="" alt="" id="image-identity" />
             <div>
@@ -173,15 +201,22 @@
               <span id="age-identity">23 Tahun</span>
             </div>
           </div>
+
+          <!-- Container value BMI -->
           <div id="container-value" class="container">
             <h1>BMI anda adalah</h1>
             <span id="value-bmi">23</span>
           </div>
         </div>
+
+        <!-- Container BMI display -->
         <section id="bmi-display" class="container">
           <h2>Hasil</h2>
+          <!-- Container image BMI display -->
           <div id="img-bmi-display">
+            <!-- Container image male BMI display -->
             <div id="img-bmi-display-male">
+              <!-- Container image male condition underweight BMI display -->
               <div class="img-bmi-display-item kekurangan-bb">
                 <img
                   src="assets/bmi-display-male/kekurangan-bb-male.png"
@@ -190,6 +225,7 @@
                 <p>Kekurangan Berat Badan</p>
                 <p>&lt; 18.5</p>
               </div>
+              <!-- Container image male condition normal BMI display -->
               <div class="img-bmi-display-item normal">
                 <img
                   src="assets/bmi-display-male/normal-male.png"
@@ -198,6 +234,7 @@
                 <p>Normal atau Sehat</p>
                 <p>18.5 - 24.9</p>
               </div>
+              <!-- Container image male condition overweight BMI display -->
               <div class="img-bmi-display-item kelebihan-bb">
                 <img
                   src="assets/bmi-display-male/kelebihan-bb-male.png"
@@ -206,6 +243,7 @@
                 <p>Kelebihan Berat Badan</p>
                 <p>25 - 29.9</p>
               </div>
+              <!-- Container image male condition obesity BMI display -->
               <div class="img-bmi-display-item obesitas">
                 <img
                   src="assets/bmi-display-male/obesitas-male.png"
@@ -216,6 +254,7 @@
               </div>
             </div>
             <div id="img-bmi-display-female">
+              <!-- Container image female condition obesity BMI display -->
               <div class="img-bmi-display-item kekurangan-bb">
                 <img
                   src="assets/bmi-display-female/kekurangan-bb-female.png"
@@ -224,6 +263,8 @@
                 <p>Kekurangan Berat Badan</p>
                 <p>&lt; 18.5</p>
               </div>
+
+              <!-- Container image female condition obesity BMI display -->
               <div class="img-bmi-display-item normal">
                 <img
                   src="assets/bmi-display-female/normal-female.png"
@@ -232,6 +273,7 @@
                 <p>Normal atau Sehat</p>
                 <p>18.5 - 24.9</p>
               </div>
+              <!-- Container image female condition obesity BMI display -->
               <div class="img-bmi-display-item kelebihan-bb">
                 <img
                   src="assets/bmi-display-female/kelebihan-bb-female.png"
@@ -240,6 +282,7 @@
                 <p>Kelebihan Berat Badan</p>
                 <p>25 - 29.9</p>
               </div>
+              <!-- Container image female condition obesity BMI display -->
               <div class="img-bmi-display-item obesitas">
                 <img
                   src="assets/bmi-display-female/obesitas-female.png"
@@ -250,16 +293,21 @@
               </div>
             </div>
           </div>
+
+          <!-- Container Range value BMI -->
           <div id="range">
+            <!-- Container Bubble -->
             <div id="container-range-bubble">
               <span id="bubble"></span>
             </div>
+            <!-- Container range display -->
             <div id="range-display">
               <div id="range-kekurangan-bb"></div>
               <div id="range-normal"></div>
               <div id="range-kelebihan-bb"></div>
               <div id="range-obesitas"></div>
             </div>
+            <!-- Container number range display -->
             <div id="num-range-display">
               <span id="num-range-kekurangan-bb">0</span>
               <span id="num-range-normal">18.5</span>
@@ -270,11 +318,14 @@
         </section>
       </div>
 
+      <!-- Container right side -->
       <div id="right">
+        <!-- Container Saran -->
         <section id="saran" class="container">
           <h2>Saran</h2>
           <p id="text-saran"></p>
         </section>
+        <!-- Container greetings -->
         <div id="greet-back">
           <div class="container">Terimakasih telah datang :))</div>
           <button id="kembali" class="container" onclick="kembali()">

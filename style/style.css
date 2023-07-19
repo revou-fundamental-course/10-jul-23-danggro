@@ -9,7 +9,7 @@
   --underweight: #83ece6;
   --normal: #83ec94;
   --overweight: #ece883;
-  --obesite: #fe9292;
+  --obesity: #fe9292;
 }
 
 /* Reset CSS */
@@ -256,7 +256,7 @@ p, li{
 #container-result {
   display: flex;
   gap: 1rem;
-  width: 100vw;
+  width: 100%;
   position: absolute;
   top: 0;
   transform: translateX(100%);
@@ -389,7 +389,7 @@ p, li{
 }
 
 #range-obesitas {
-  background-color: var(--obesite);
+  background-color: var(--obesity);
   flex-grow: calc(10 / 40);
 }
 
@@ -420,7 +420,7 @@ p, li{
 }
 
 #num-range-obesitas {
-  color: var(--obesite);
+  color: var(--obesity);
   width: calc((10 / 40) * 100%);
 }
 
