@@ -25,6 +25,10 @@ function hitungBMI() {
 
   const containerHome = document.getElementById("container-home");
 
+  const imageIdentity = document.getElementById("image-identity");
+  const genderIdentity = document.getElementById("gender-identity");
+  const ageIdentity = document.getElementById("age-identity");
+
   if (!beratBadan.value || !usia.value || !tinggiBadan.value) {
     if (beratBadan.value == "") {
       validation(containerBeratBadan);
@@ -38,15 +42,20 @@ function hitungBMI() {
   } else {
     for (let i = 0; i < jenisKelamin.length; i++) {
       if (jenisKelamin[i].checked) {
-        if (jenisKelamin[i].value == "laki-laki") {
+        if (jenisKelamin[i].value == "Laki-laki") {
           imageMale.style.display = "flex";
+          genderIdentity.innerHTML = jenisKelamin[i].value;
+          imageIdentity.setAttribute("src", "assets/avatar-gender/male.png");
         } else {
           imageFemale.style.display = "flex";
+          genderIdentity.innerHTML = jenisKelamin[i].value;
+          imageIdentity.setAttribute("src", "assets/avatar-gender/female.png");
         }
       }
     }
 
     let result = (beratBadan.value / (tinggiBadan.value / 100) ** 2).toFixed(1);
+    ageIdentity.innerHTML = usia.value + " tahun";
     beratBadan.value = "";
     usia.value = "";
     tinggiBadan.value = "";
@@ -76,9 +85,6 @@ function hitungBMI() {
       });
 
     containerHome.style.transform = "translateX(-100%)";
-    // headerBMI.style.transform = "translateX(170%)";
-    // formBMI.style.transform = "translateX(170%)";
-    // fiturBMI.style.transform = "translateX(170%)";
     resultBMI.style.transform = "translateX(0%)";
 
     return result;
@@ -147,15 +153,16 @@ function kembali() {
       containerImage[i].style.opacity = "30%";
     }
   }, 600);
-  // headerBMI.style.transform = "translateX(0%)";
-  // formBMI.style.transform = "translateX(0%)";
-  // fiturBMI.style.transform = "translateX(0%)";
   containerHome.style.transform = "translateX(0%)";
   resultBMI.style.transform = "translateX(100%)";
 }
 
 function validation(container) {
   container.style.setProperty("--afterOpacity", 100);
+  if (window.matchMedia("(max-width: 480px)"))
+    return container.style.setProperty("--afterBottom", "13%");
+  if (window.matchMedia("(max-width: 768px)"))
+    return container.style.setProperty("--afterBottom", "12%");
   container.style.setProperty("--afterBottom", "17%");
 }
 

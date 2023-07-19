@@ -123,6 +123,7 @@ p, li{
 
 #jenis-kelamin{
   text-align: center;
+  align-items: center;
 }
 
 #input-radio {
@@ -178,7 +179,7 @@ p, li{
 #container-mb-b{
   display: flex;
   flex-direction: column;
-  
+  gap: 1rem;
 }
 
 #made-by{
@@ -199,7 +200,6 @@ p, li{
   color: var(--primary);
   cursor: pointer;
   border: 5px solid var(--dark-purple);
-  margin-top: 1rem;
 }
 
 #form-bmi #hitung-bmi:hover {
@@ -208,8 +208,6 @@ p, li{
 }
 
 /* Keunggulan Fitur */
-
-
 #fitur, #rumus {
   padding: 1.5rem 2rem;
   display: flex;
@@ -232,6 +230,7 @@ p, li{
   flex-direction: column;
   row-gap: 1rem;
 }
+
 #sosial{
   text-align: center;
     padding: 0.5rem 1rem;
@@ -241,6 +240,7 @@ p, li{
   display: flex;
   column-gap: 1rem;
 }
+
 #container-link a{
   text-decoration: none;
   color: var(--primary);
@@ -452,16 +452,17 @@ p, li{
 #greet-back div{
   display: grid;
   place-items: center;
+  flex-grow: 1;
+}
+
+#greet-back div, #kembali{
   font-size: 24px;
   font-weight: 700;
-  flex-grow: 1;
 }
 
 /* Button Kembali */
 #kembali {
   padding: 0.5rem 1.5rem;
-  font-size: 24px;
-  font-weight: 700;
   color: var(--primary);
   cursor: pointer;
 }
@@ -482,7 +483,6 @@ p, li{
   opacity: var(--afterOpacity, 0);
   bottom: var(--afterBottom, 0);
   width: fit-content;
-  /* margin-top: 0.4rem; */
   padding: 0.4rem 0.6rem;
   background-color: var(--dark-purple);
   font-size: 14px;
@@ -502,4 +502,306 @@ p, li{
 #container-tb::after {
   content: "Tinggi badan harus diisi";
   
+}
+
+@media only screen and (max-width: 768px) {
+  /* Font */
+  h1{
+    font-size: 28px;
+  }
+  
+  h2{
+    font-size: 24px;
+  }
+  
+  p, li{
+    font-size: 18px;
+  }
+
+  /* Container Home */
+  .row{
+    flex-direction: column;
+  }
+
+  #header-bmi{
+    width: auto;
+  }
+
+  #add-explanation{
+    width: auto;
+  }
+
+  /* Bottom */
+  #bottom{
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  #jenis-kelamin, #container-usia, #container-bb, #container-tb{
+    padding: 1rem 1rem;
+    row-gap: 0.5rem;
+  }
+
+  #container-jk-u, #container-bb-tb{
+    flex-grow: 0;
+  }
+
+  #jenis-kelamin{
+    flex-grow: 0;
+  }
+
+  #container-usia{
+    flex-grow: 1;
+  }
+
+  #container-bb, #container-tb{
+    padding-bottom: 13%;
+  }
+
+  #input-radio img {
+    width: 60px;
+  }
+
+  #input-radio span{
+    font-size: 16px;
+  }
+
+  #form-bmi .input-number {
+    width: 63px;
+    padding: 0.5rem 0.75rem;
+    font-size: 20px;
+  }
+
+  #form-bmi .satuan {
+    font-size: 20px;
+  }
+
+  #container-mb-b{
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  /* Made By */
+  #made-by{
+    font-size: 20px;
+    padding: 0.75rem 1.5rem;
+  }
+
+  #made-by br{
+    display: none;
+  }
+
+  /* Button */
+  #hitung-bmi{
+    font-size: 20px;
+    padding: 0.75rem 1.5rem;
+  }
+
+  #fitur, #rumus{
+    padding: 1.5rem;
+    flex-grow: 0;
+  }
+
+  /* Social Media */
+  #container-link a{
+    font-size: 20px;
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Container Result */
+  #container-result {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #left, #right{
+    width: auto;
+  }
+
+  #greet-back div, #kembali{
+    font-size: 20px;
+  }
+
+  /* Validasi */
+  #container-bb::after,#container-usia::after,#container-tb::after{
+    opacity: var(--afterOpacity, 0);
+    bottom: var(--afterBottom, 0);
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* Font */
+  h1{
+    font-size: 24px;
+  }
+  
+  h2{
+    font-size: 20px;
+  }
+  
+  p, li{
+    font-size: 16px;
+  }
+
+  /* Container Home */
+  #container-home{
+    gap: 0.5rem;
+  }
+
+  .row{
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #header-bmi, #add-explanation{
+    width: auto;
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  /* Bottom */
+  #bottom{
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #jenis-kelamin, #container-usia, #container-bb, #container-tb{
+    padding: 1rem 1rem;
+    row-gap: 0.5rem;
+  }
+
+  #container-jk-u, #container-bb-tb{
+    gap: 0.5rem;
+  }
+
+  #jenis-kelamin{
+    flex-grow: 2;
+  }
+
+  #container-usia{
+    flex-grow: 1;
+  }
+  #container-bb, #container-tb{
+    padding-bottom: 12%;
+  }
+  #input-radio img {
+    width: 60px;
+  }
+
+  #input-radio span{
+    font-size: 16px;
+  }
+
+  #form-bmi .input-number {
+    width: 63px;
+    padding: 0.5rem 0.75rem;
+    font-size: 18px;
+  }
+
+  #form-bmi .satuan {
+    font-size: 18px;
+    margin-left: 0.25rem;
+  }
+
+  #container-mb-b{
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  
+  /* Made By */
+  #made-by, #hitung-bmi{
+    font-size: 16px;
+    padding: 0.5rem 1.5rem;
+  }
+
+  #made-by br{
+    display: none;
+  }
+
+  #fitur, #rumus{
+    padding: 1.5rem;
+    flex-grow: 0;
+  }
+
+  /* Social Media */
+  #container-social{
+    gap: 0.5rem;
+  }
+
+  #container-link a{
+    font-size: 18px;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  /* Container Result */
+  #container-result {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #left, #right, #container-info, #greet-back{
+    gap: 0.5rem;
+  }
+
+  #identity, #container-value{
+    padding: 1rem;
+  }
+
+  #identity img{
+    width: 50px;
+  }
+
+  #identity span{
+    font-size: 20px;
+  }
+
+  #value-bmi{
+    font-size: 28px;
+  }
+
+  #bmi-display .img-bmi-display-item img{
+    width: 80px;
+  }
+  #img-bmi-display-male,
+  #img-bmi-display-female {
+    column-gap: 0.5rem;
+  }
+  #bmi-display .img-bmi-display-item p{
+    font-size: 14px;
+  }
+
+  #bmi-display #range #container-range-bubble{
+    height: 40px;
+  }
+
+  #bubble{
+    font-size: 14px;
+    padding: 0.25rem;
+  }
+
+  #num-range-display {
+    margin-top: 0.25rem;
+  }
+
+  #num-range-kekurangan-bb, #num-range-normal, #num-range-kelebihan-bb, #num-range-obesitas{
+    font-size: 14px;
+  }
+
+  /* Saran */
+  #saran {
+    padding: 1.5rem 1rem;
+  }
+
+  #greet-back div, #kembali{
+    font-size: 18px;
+  }
+
+  /* Validasi */
+  #container-bb::after,#container-usia::after,#container-tb::after{
+    opacity: var(--afterOpacity, 0);
+    bottom: var(--afterBottom, 0);
+    font-size: 10px;
+  }
 }
