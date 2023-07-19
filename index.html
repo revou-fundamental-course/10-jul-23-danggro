@@ -6,202 +6,279 @@
   </head>
   <body>
     <div id="container-home">
-      <header id="header-bmi" class="container">
-        <h1>Kalkulator BMI</h1>
-        <p>
-          Body Mass Index (BMI) atau yang sering dikenal dengan Indeks Massa
-          Tubuh (IMT) adalah nilai ukur untuk mengetahui status gizi seseorang
-          berdasarkan berat dan tinggi badannya. Nilai BMI (IMT) juga dapat
-          menjadi alat skrining awal untuk mengetahui risiko seseorang terhadap
-          suatu penyakit.
-        </p>
-      </header>
-      <main id="form-bmi" class="container">
-        <form action="">
-          <div id="jenis-kelamin">
-            <span class="title-input">Jenis Kelamin</span>
-            <div class="input-radio">
-              <label for="laki-laki" class="container-radio">
-                <input
-                  type="radio"
-                  id="laki-laki"
-                  name="jenis-kelamin"
-                  value="laki-laki"
-                  checked="checked"
-                />
-                <img src="assets/avatar-gender/male.png" alt="male" /><br />
-                <span>Laki-laki</span>
-              </label>
+      <div class="row">
+        <header id="header-bmi" class="container">
+          <h1>Kalkulator BMI</h1>
+          <p>
+            Body Mass Index (BMI) atau yang sering dikenal dengan Indeks Massa
+            Tubuh (IMT) adalah nilai ukur untuk mengetahui status gizi seseorang
+            berdasarkan berat dan tinggi badannya. Nilai BMI (IMT) juga dapat
+            menjadi alat skrining awal untuk mengetahui risiko seseorang
+            terhadap suatu penyakit.
+          </p>
+        </header>
+        <div id="add-explanation" class="container">
+          <p>
+            kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita hamil
+            atau menyusui tidak boleh mengandalkan pembacaan BMI ini) dan tidak
+            ada tindakan yang hraus diambil berdasarkan nilainya selain
+            berkonsultasi dengan orang yang memenuhi syarat seperti dokter.
+          </p>
+        </div>
+      </div>
+      <div id="bottom">
+        <main id="form-bmi" class="row">
+          <div id="container-jk-u">
+            <div id="jenis-kelamin" class="container">
+              <h2>Jenis Kelamin</h2>
+              <div id="input-radio">
+                <label for="laki-laki" class="container-radio">
+                  <input
+                    type="radio"
+                    id="laki-laki"
+                    name="jenis-kelamin"
+                    value="laki-laki"
+                    checked="checked"
+                  />
+                  <img src="assets/avatar-gender/male.png" alt="male" /><br />
+                  <span>Laki-laki</span>
+                </label>
 
-              <label for="perempuan" class="container-radio">
+                <label for="perempuan" class="container-radio">
+                  <input
+                    type="radio"
+                    id="perempuan"
+                    name="jenis-kelamin"
+                    value="perempuan"
+                  />
+                  <img
+                    src="assets/avatar-gender/female.png"
+                    alt="female"
+                  /><br />
+                  <span>Perempuan</span>
+                </label>
+              </div>
+            </div>
+            <div id="container-usia" class="container">
+              <label for="usia"><h2>Usia</h2></label>
+              <div>
                 <input
-                  type="radio"
-                  id="perempuan"
-                  name="jenis-kelamin"
-                  value="perempuan"
+                  class="input-number"
+                  type="number"
+                  id="usia"
+                  min="1"
+                  max="150"
+                  maxlength="3"
+                  oninput="maxLengthValidation(event)"
+                  onchange="removeValidation(event)"
+                  onkeypress="return onlyNumberValidation(event)"
                 />
-                <img src="assets/avatar-gender/female.png" alt="female" /><br />
-                <span>Perempuan</span>
-              </label>
+                <span class="satuan">tahun</span>
+              </div>
             </div>
           </div>
-          <div id="container-bb">
-            <label class="title-input" for="berat-badan">Berat Badan</label>
-            <input
-              class="input-number"
-              type="number"
-              id="berat-badan"
-              min="1"
-              max="200"
-              maxlength="3"
-              oninput="maxLengthValidation(event)"
-              onchange="removeValidation(event)"
-              onkeypress="return onlyNumberValidation(event)"
-            />
-            <span class="satuan">kg</span>
-          </div>
-          <div id="container-usia">
-            <label class="title-input" for="usia">Usia</label>
-            <input
-              class="input-number"
-              type="number"
-              id="usia"
-              min="1"
-              max="150"
-              maxlength="3"
-              oninput="maxLengthValidation(event)"
-              onchange="removeValidation(event)"
-              onkeypress="return onlyNumberValidation(event)"
-            />
-            <span class="satuan">tahun</span>
-          </div>
-          <div id="container-tb">
-            <label class="title-input" for="tinggi-badan">Tinggi Badan</label>
-            <input
-              class="input-number"
-              type="number"
-              id="tinggi-badan"
-              min="1"
-              max="300"
-              maxlength="3"
-              oninput="maxLengthValidation(event)"
-              onchange="removeValidation(event)"
-              onkeypress="return onlyNumberValidation(event)"
-            />
-            <span class="satuan">cm</span>
-          </div>
-        </form>
-        <button id="hitung-bmi" onclick="hitungBMI()">Hitung BMI</button>
-      </main>
 
-      <section id="fitur" class="container">
-        <h2>Keunggulan Fitur</h2>
-        <ol>
-          <li>Menghitung berat badan</li>
-          <li>Menentukan kategori berat badan</li>
-          <li>Mempersiapkan program penurunan berat badan</li>
-        </ol>
-      </section>
+          <div id="container-bb-tb">
+            <div id="container-bb" class="container">
+              <label for="berat-badan"><h2>Berat Badan</h2></label>
+              <div>
+                <input
+                  class="input-number"
+                  type="number"
+                  id="berat-badan"
+                  min="1"
+                  max="200"
+                  maxlength="3"
+                  oninput="maxLengthValidation(event)"
+                  onchange="removeValidation(event)"
+                  onkeypress="return onlyNumberValidation(event)"
+                />
+                <span class="satuan">kg</span>
+              </div>
+            </div>
+            <div id="container-tb" class="container">
+              <label for="tinggi-badan"><h2>Tinggi Badan</h2></label>
+              <div>
+                <input
+                  class="input-number"
+                  type="number"
+                  id="tinggi-badan"
+                  min="1"
+                  max="300"
+                  maxlength="3"
+                  oninput="maxLengthValidation(event)"
+                  onchange="removeValidation(event)"
+                  onkeypress="return onlyNumberValidation(event)"
+                />
+                <span class="satuan">cm</span>
+              </div>
+            </div>
+          </div>
+          <div id="container-mb-b">
+            <div id="made-by" class="container">
+              Made by<br />
+              Danggro
+            </div>
+            <button id="hitung-bmi" onclick="hitungBMI()">Hitung BMI</button>
+          </div>
+        </main>
+
+        <div class="row">
+          <div id="fitur" class="container">
+            <h2>Keunggulan Fitur</h2>
+            <ol>
+              <li>Menghitung berat badan</li>
+              <li>Menentukan kategori berat badan</li>
+              <li>Mempersiapkan program penurunan berat badan</li>
+            </ol>
+          </div>
+          <div id="rumus" class="container">
+            <h2>Rumus Perhitungan</h2>
+            <p>BMI = Berat Badan / (Tinggi Badan)^2</p>
+          </div>
+          <div id="container-social">
+            <div id="sosial" class="container"><h2>Social Media</h2></div>
+            <div id="container-link">
+              <a
+                class="container"
+                target="_blank"
+                href="www.twitter.com/ikutkatamamah"
+                >Twitter</a
+              >
+              <a
+                class="container"
+                target="_blank"
+                href="www.instagram.com/anangdwin"
+                >Instagram</a
+              >
+              <a class="container" target="_blank" href="www.github.com/danggro"
+                >Github</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="bmi-result">
-      <section id="bmi-display" class="container">
-        <div>
-          <h2>BMI anda adalah</h2>
-          <span id="value-bmi"></span>
-        </div>
-        <div id="img-bmi-display">
-          <div id="img-bmi-display-male">
-            <div class="img-bmi-display-item kekurangan-bb">
-              <img
-                src="assets/bmi-display-male/kekurangan-bb-male.png"
-                alt="kekurangan-bb-male"
-              />
-              <p>Kekurangan Berat Badan</p>
-              <p>&lt; 18.5</p>
-            </div>
-            <div class="img-bmi-display-item normal">
-              <img
-                src="assets/bmi-display-male/normal-male.png"
-                alt="normal-male"
-              />
-              <p>Normal atau Sehat</p>
-              <p>18.5 - 24.9</p>
-            </div>
-            <div class="img-bmi-display-item kelebihan-bb">
-              <img
-                src="assets/bmi-display-male/kelebihan-bb-male.png"
-                alt="kelebihan-bb-male"
-              />
-              <p>Kelebihan Berat Badan</p>
-              <p>25 - 29.9</p>
-            </div>
-            <div class="img-bmi-display-item obesitas">
-              <img
-                src="assets/bmi-display-male/obesitas-male.png"
-                alt="obesitas-male"
-              />
-              <p>Obesitas</p>
-              <p>&gt; 30</p>
-            </div>
-          </div>
-          <div id="img-bmi-display-female">
-            <div class="img-bmi-display-item kekurangan-bb">
-              <img
-                src="assets/bmi-display-female/kekurangan-bb-female.png"
-                alt="kekurangan-bb-female"
-              />
-              <p>Kekurangan Berat Badan</p>
-            </div>
-            <div class="img-bmi-display-item normal">
-              <img
-                src="assets/bmi-display-female/normal-female.png"
-                alt="normal-female"
-              />
-              <p>Normal atau Sehat</p>
-            </div>
-            <div class="img-bmi-display-item kelebihan-bb">
-              <img
-                src="assets/bmi-display-female/kelebihan-bb-female.png"
-                alt="kelebihan-bb-female"
-              />
-              <p>Kelebihan Berat Badan</p>
-            </div>
-            <div class="img-bmi-display-item obesitas">
-              <img
-                src="assets/bmi-display-female/obesitas-female.png"
-                alt="obesitas-female"
-              />
-              <p>Obesitas</p>
-            </div>
-          </div>
-        </div>
-        <div id="range">
-          <div id="container-range-bubble">
-            <span id="bubble"></span>
-          </div>
-          <div id="range-display">
-            <div id="range-kekurangan-bb"></div>
-            <div id="range-normal"></div>
-            <div id="range-kelebihan-bb"></div>
-            <div id="range-obesitas"></div>
-          </div>
-          <div id="num-range-display">
-            <span id="num-range-kekurangan-bb">0</span>
-            <span id="num-range-normal">18.5</span>
-            <span id="num-range-kelebihan-bb">25</span>
-            <span id="num-range-obesitas">30+</span>
-          </div>
-        </div>
-      </section>
 
-      <section id="saran" class="container">
-        <h2>Saran</h2>
-        <p id="text-saran"></p>
-      </section>
+    <div id="container-result">
+      <div id="left">
+        <div id="container-info">
+          <div id="identity" class="container">
+            <img src="assets/avatar-gender/male.png" alt="" />
+            <div>
+              <span>Laki-laki</span>
+              <span>23 Tahun</span>
+            </div>
+          </div>
+          <div id="container-value" class="container">
+            <h1>BMI anda adalah</h1>
+            <span id="value-bmi">23</span>
+          </div>
+        </div>
+        <section id="bmi-display" class="container">
+          <h2>Hasil</h2>
+          <div id="img-bmi-display">
+            <div id="img-bmi-display-male">
+              <div class="img-bmi-display-item kekurangan-bb">
+                <img
+                  src="assets/bmi-display-male/kekurangan-bb-male.png"
+                  alt="kekurangan-bb-male"
+                />
+                <p>Kekurangan Berat Badan</p>
+                <p>&lt; 18.5</p>
+              </div>
+              <div class="img-bmi-display-item normal">
+                <img
+                  src="assets/bmi-display-male/normal-male.png"
+                  alt="normal-male"
+                />
+                <p>Normal atau Sehat</p>
+                <p>18.5 - 24.9</p>
+              </div>
+              <div class="img-bmi-display-item kelebihan-bb">
+                <img
+                  src="assets/bmi-display-male/kelebihan-bb-male.png"
+                  alt="kelebihan-bb-male"
+                />
+                <p>Kelebihan Berat Badan</p>
+                <p>25 - 29.9</p>
+              </div>
+              <div class="img-bmi-display-item obesitas">
+                <img
+                  src="assets/bmi-display-male/obesitas-male.png"
+                  alt="obesitas-male"
+                />
+                <p>Obesitas</p>
+                <p>&gt; 30</p>
+              </div>
+            </div>
+            <div id="img-bmi-display-female">
+              <div class="img-bmi-display-item kekurangan-bb">
+                <img
+                  src="assets/bmi-display-female/kekurangan-bb-female.png"
+                  alt="kekurangan-bb-female"
+                />
+                <p>Kekurangan Berat Badan</p>
+                <p>&lt; 18.5</p>
+              </div>
+              <div class="img-bmi-display-item normal">
+                <img
+                  src="assets/bmi-display-female/normal-female.png"
+                  alt="normal-female"
+                />
+                <p>Normal atau Sehat</p>
+                <p>18.5 - 24.9</p>
+              </div>
+              <div class="img-bmi-display-item kelebihan-bb">
+                <img
+                  src="assets/bmi-display-female/kelebihan-bb-female.png"
+                  alt="kelebihan-bb-female"
+                />
+                <p>Kelebihan Berat Badan</p>
+                <p>25 - 29.9</p>
+              </div>
+              <div class="img-bmi-display-item obesitas">
+                <img
+                  src="assets/bmi-display-female/obesitas-female.png"
+                  alt="obesitas-female"
+                />
+                <p>Obesitas</p>
+                <p>&gt; 30</p>
+              </div>
+            </div>
+          </div>
+          <div id="range">
+            <div id="container-range-bubble">
+              <span id="bubble"></span>
+            </div>
+            <div id="range-display">
+              <div id="range-kekurangan-bb"></div>
+              <div id="range-normal"></div>
+              <div id="range-kelebihan-bb"></div>
+              <div id="range-obesitas"></div>
+            </div>
+            <div id="num-range-display">
+              <span id="num-range-kekurangan-bb">0</span>
+              <span id="num-range-normal">18.5</span>
+              <span id="num-range-kelebihan-bb">25</span>
+              <span id="num-range-obesitas">30+</span>
+            </div>
+          </div>
+        </section>
+      </div>
 
-      <button id="kembali" class="container" onclick="kembali()">
-        Kembali
-      </button>
+      <div id="right">
+        <section id="saran" class="container">
+          <h2>Saran</h2>
+          <p id="text-saran"></p>
+        </section>
+        <div id="greet-back">
+          <div class="container">Terimakasih telah datang :))</div>
+          <button id="kembali" class="container" onclick="kembali()">
+            Kembali
+          </button>
+        </div>
+      </div>
     </div>
 
     <script src="script/script.js"></script>

@@ -36,70 +36,108 @@ body {
   overflow-x: hidden;
 }
 
+/* Font Size */
+h1{
+  font-size: 40px;
+  font-weight: 700;
+}
+
+h2{
+  font-size: 28px;
+  font-weight: 500;
+}
+
+p, li{
+  font-size: 20px;
+}
+
+
 /* Container */
 .container {
   background-color: var(--purple);
   border: 6px solid var(--dark-purple);
 }
 
+/* Row */
+.row{
+  display: flex;
+  gap: 1rem;
+}
+
 /* Container Home */
 #container-home {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  align-items: center;
-  padding: 3rem 2rem;
-  row-gap: 2rem;
+  width: 100%;
+  padding: 1.5rem;
+  row-gap: 1rem;
   transition: all 600ms ease-in-out;
 }
 
 /* Header BMI */
 #header-bmi {
-  max-width: 832px;
+  width: calc((7/12)*100%);
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
   text-align: center;
-  padding: 1.5rem 2rem;
-  transition: all 600ms ease-in-out;
+  padding: 1.5rem 2.25rem;
 }
 
-#header-bmi h1 {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 1rem;
+/* Add Explanation */
+#add-explanation{
+  width: calc((5/12)*100%);
+  padding: 1.5rem 2.25rem;
+  display: grid;
+  place-items: center;
 }
 
-#header-bmi p {
-  font-size: 24px;
-  font-weight: 400;
+/* Bottom */
+#bottom{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 }
 
 /* Form BMI */
 #form-bmi {
-  padding: 2rem 2.5rem 2rem 2.5rem;
-  max-width: 946px;
-  text-align: center;
   width: 100%;
-  transition: all 600ms ease-in-out;
 }
 
-#form-bmi form {
+#container-jk-u, #container-bb-tb{
   display: flex;
-  text-align: start;
-  justify-content: space-between;
+  gap: 1rem;
+  flex-grow: 1;
 }
 
-#form-bmi #jenis-kelamin .input-radio {
+#jenis-kelamin, #container-usia, #container-bb, #container-tb{
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+#jenis-kelamin, #container-bb, #container-tb{
+  flex-grow: 1;
+}
+
+#jenis-kelamin{
+  text-align: center;
+}
+
+#input-radio {
   display: flex;
   column-gap: 1rem;
 }
 
-#form-bmi #jenis-kelamin .input-radio img {
+#input-radio img {
   width: 80px;
   opacity: 50%;
 }
 
-#form-bmi #jenis-kelamin .input-radio span {
+#input-radio span {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   opacity: 50%;
 }
 
@@ -114,42 +152,48 @@ body {
   opacity: 0;
 }
 
-#form-bmi #jenis-kelamin .container-radio input:checked ~ img {
+#form-bmi .container-radio input:checked ~ img,
+#form-bmi .container-radio input:checked ~ span {
   opacity: 100%;
-}
-
-#form-bmi #jenis-kelamin .container-radio input:checked ~ span {
-  opacity: 100%;
-}
-
-#form-bmi .title-input {
-  display: block;
-  font-size: 32px;
-  font-weight: 500;
-  padding-bottom: 0.5rem;
 }
 
 #form-bmi .input-number {
-  width: 83px;
-  padding: 0.5rem 1rem;
+  width: 72px;
+  padding: 0.5rem 0.75rem;
   background-color: var(--primary);
   color: var(--dark-purple);
-  border: 4px solid var(--dark-purple);
+  border: 5px solid var(--dark-purple);
   font-weight: 700;
-  font-size: 28px;
+  font-size: 24px;
   outline: none;
   -moz-appearance: textfield;
 }
 
 #form-bmi .satuan {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 500;
   margin-left: 0.5rem;
 }
 
-#form-bmi #hitung-bmi {
-  padding: 0.75rem 1.25rem 0.75rem 1.25rem;
-  font-size: 28px;
+#container-mb-b{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+#made-by{
+  font-size: 24px;
+  font-weight: 500;
+  flex-grow: 1;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  flex-shrink: 0;
+}
+
+#hitung-bmi {
+  padding: 0.75rem 1.25rem;
+  font-size: 24px;
   font-weight: 700;
   background-color: var(--dark-purple);
   color: var(--primary);
@@ -164,17 +208,14 @@ body {
 }
 
 /* Keunggulan Fitur */
-#fitur {
-  max-width: 832px;
-  padding: 1.5rem 2rem;
-  width: 100%;
-  transition: all 600ms ease-in-out;
-}
 
-#fitur h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 1rem;
+
+#fitur, #rumus {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  flex-grow: 1;
 }
 
 #fitur ol {
@@ -182,71 +223,127 @@ body {
 }
 
 #fitur li {
-  font-size: 24px;
   list-style: decimal;
 }
 
-/* BMI Result */
-#bmi-result {
+/* Social Media */
+#container-social{
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
-  align-items: center;
+  row-gap: 1rem;
+}
+#sosial{
+  text-align: center;
+    padding: 0.5rem 1rem;
+}
+
+#container-link{
+  display: flex;
+  column-gap: 1rem;
+}
+#container-link a{
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 24px;
+  padding: 0.5rem 1rem;
+}
+
+#container-link a:hover{
+  background-color: var(--dark-purple);
+}
+
+/* BMI Result */
+#container-result {
+  display: flex;
+  gap: 1rem;
   width: 100vw;
   position: absolute;
   top: 0;
   transform: translateX(100%);
   transition: all 600ms ease-in-out;
-  padding: 3rem 2rem;
+  padding: 1.5rem;
 }
 
-#bmi-result #bmi-display {
-  max-width: 832px;
-  width: 100%;
-  text-align: center;
-  padding: 1.5rem 2rem 1.5rem 2rem;
+#left{
+  width: calc((7/12)*100%);
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
+  row-gap: 1rem;
 }
 
-#bmi-result #bmi-display h2 {
-  font-weight: 600;
-  font-size: 48px;
+#container-info{
+  display: flex;
+  gap: 1rem;
 }
 
-#bmi-result #bmi-display #value-bmi {
-  font-weight: 600;
-  font-size: 48px;
-  color: #fe9292;
+#identity{
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+  padding: 1rem 1.5rem;
 }
 
-#bmi-result #bmi-display #img-bmi-display-male,
-#bmi-result #bmi-display #img-bmi-display-female {
+#identity img{
+  width: 70px;
+  height: fit-content;
+}
+
+#identity span{
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+#container-value{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem 1.5rem;
+}
+
+#value-bmi{
+  font-weight: 700;
+  font-size: 40px;
+}
+
+#bmi-display {
+  text-align: center;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+#img-bmi-display-male,
+#img-bmi-display-female {
   display: none;
   justify-content: center;
-  column-gap: 1.5rem;
+  column-gap: 1rem;
 }
 
-#bmi-result #bmi-display .img-bmi-display-item {
+#bmi-display .img-bmi-display-item {
   opacity: 30%;
 }
 
-#bmi-result #bmi-display .img-bmi-display-item img {
+#bmi-display .img-bmi-display-item img {
   width: 130px;
 }
 
-#bmi-result #bmi-display .img-bmi-display-item p {
+#bmi-display .img-bmi-display-item p {
   font-size: 20px;
   font-weight: 500;
 }
 
-#bmi-result #bmi-display #range #container-range-bubble {
+#bmi-display #range #container-range-bubble {
   position: relative;
   height: 60px;
 }
 
-#bmi-result #bmi-display #range #bubble {
+#bubble {
   display: block;
   width: fit-content;
   padding: 0.5rem;
@@ -257,7 +354,7 @@ body {
   position: absolute;
 }
 
-#bmi-result #bmi-display #range #bubble::after {
+#bubble::after {
   content: "";
   display: block;
   position: absolute;
@@ -271,95 +368,102 @@ body {
   transform: rotateZ(90deg), scaleX(-1);
 }
 
-#bmi-result #bmi-display #range #range-display {
+#range-display {
   display: flex;
   height: 1.75rem;
 }
 
-#bmi-result #bmi-display #range #range-display #range-kekurangan-bb {
+#range-kekurangan-bb {
   background-color: var(--underweight);
   flex-grow: calc(18.5 / 40);
 }
 
-#bmi-result #bmi-display #range #range-display #range-normal {
+#range-normal {
   background-color: var(--normal);
   flex-grow: calc(6.5 / 40);
 }
 
-#bmi-result #bmi-display #range #range-display #range-kelebihan-bb {
+#range-kelebihan-bb {
   background-color: var(--overweight);
   flex-grow: calc(5 / 40);
 }
 
-#bmi-result #bmi-display #range #range-display #range-obesitas {
+#range-obesitas {
   background-color: var(--obesite);
   flex-grow: calc(10 / 40);
 }
 
-#bmi-result #bmi-display #range #num-range-display {
+#num-range-display {
   display: flex;
   margin-top: 0.5rem;
 }
 
-#bmi-result #bmi-display #range #num-range-kekurangan-bb {
+#num-range-kekurangan-bb, #num-range-normal, #num-range-kelebihan-bb, #num-range-obesitas{
   text-align: left;
   display: block;
   font-size: 20px;
+}
+
+#num-range-kekurangan-bb {
   color: var(--underweight);
   width: calc((18.5 / 40) * 100%);
 }
 
-#bmi-result #bmi-display #range #num-range-normal {
-  text-align: left;
-  display: block;
-  font-size: 20px;
+#num-range-normal {
   color: var(--normal);
   width: calc((6.5 / 40) * 100%);
 }
 
-#bmi-result #bmi-display #range #num-range-kelebihan-bb {
-  text-align: left;
-  display: block;
-  font-size: 20px;
+#num-range-kelebihan-bb {
   color: var(--overweight);
   width: calc((5 / 40) * 100%);
 }
 
-#bmi-result #bmi-display #range #num-range-obesitas {
-  text-align: left;
-  display: block;
-  font-size: 20px;
+#num-range-obesitas {
   color: var(--obesite);
   width: calc((10 / 40) * 100%);
 }
 
 /* Saran */
-#saran {
-  max-width: 832px;
-  width: 100%;
-  padding: 1.5rem 2rem 1.5rem 2rem;
+#right{
+  width: calc((5/12)*100%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-#saran h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+#saran {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
 }
 
 #saran p {
-  font-size: 24px;
-  font-weight: 500;
   text-align: justify;
+}
+
+/* Greetings */
+#greet-back{
+  display: flex;
+  gap: 1rem;
+}
+
+#greet-back div{
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  flex-grow: 1;
 }
 
 /* Button Kembali */
 #kembali {
-  padding: 1rem 1.5rem 1rem 1.5rem;
-  font-size: 32px;
+  padding: 0.5rem 1.5rem;
+  font-size: 24px;
   font-weight: 700;
   color: var(--primary);
   cursor: pointer;
-  margin-bottom: 2rem;
 }
 
 #kembali:hover {
@@ -372,48 +476,30 @@ body {
 #container-tb {
   position: relative;
 }
-
-#container-bb::after {
-  content: "Berat badan harus diisi";
+#container-bb::after,#container-usia::after,#container-tb::after{
   display: block;
   position: absolute;
   opacity: var(--afterOpacity, 0);
   bottom: var(--afterBottom, 0);
   width: fit-content;
-  margin-top: 0.4rem;
+  /* margin-top: 0.4rem; */
   padding: 0.4rem 0.6rem;
   background-color: var(--dark-purple);
   font-size: 14px;
   color: var(--primary);
   transition: all 250ms ease-out;
+}
+#container-bb::after {
+  content: "Berat badan harus diisi";
+  
 }
 
 #container-usia::after {
   content: "Usia harus diisi";
-  display: block;
-  position: absolute;
-  opacity: var(--afterOpacity, 0);
-  bottom: var(--afterBottom, 0);
-  width: fit-content;
-  margin-top: 0.4rem;
-  padding: 0.4rem 0.6rem;
-  background-color: var(--dark-purple);
-  font-size: 14px;
-  color: var(--primary);
-  transition: all 250ms ease-out;
+  
 }
 
 #container-tb::after {
   content: "Tinggi badan harus diisi";
-  display: block;
-  position: absolute;
-  opacity: var(--afterOpacity, 0);
-  bottom: var(--afterBottom, 0);
-  width: fit-content;
-  margin-top: 0.4rem;
-  padding: 0.4rem 0.6rem;
-  background-color: var(--dark-purple);
-  font-size: 14px;
-  color: var(--primary);
-  transition: all 250ms ease-out;
+  
 }

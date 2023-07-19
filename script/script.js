@@ -19,7 +19,7 @@ function hitungBMI() {
   const formBMI = document.getElementById("form-bmi");
   const fiturBMI = document.getElementById("fitur");
 
-  const resultBMI = document.getElementById("bmi-result");
+  const resultBMI = document.getElementById("container-result");
 
   const bubble = document.getElementById("bubble");
 
@@ -47,7 +47,6 @@ function hitungBMI() {
     }
 
     let result = (beratBadan.value / (tinggiBadan.value / 100) ** 2).toFixed(1);
-
     beratBadan.value = "";
     usia.value = "";
     tinggiBadan.value = "";
@@ -135,7 +134,7 @@ function kembali() {
   const headerBMI = document.getElementById("header-bmi");
   const formBMI = document.getElementById("form-bmi");
   const fiturBMI = document.getElementById("fitur");
-  const resultBMI = document.getElementById("bmi-result");
+  const resultBMI = document.getElementById("container-result");
   let textSaran = document.getElementById("text-saran");
   const containerHome = document.getElementById("container-home");
 
@@ -157,13 +156,19 @@ function kembali() {
 
 function validation(container) {
   container.style.setProperty("--afterOpacity", 100);
-  container.style.setProperty("--afterBottom", "9%");
+  container.style.setProperty("--afterBottom", "17%");
 }
 
 function removeValidation(event) {
   if (event.target.value) {
-    event.target.parentElement.style.setProperty("--afterOpacity", 0);
-    event.target.parentElement.style.setProperty("--afterBottom", "0%");
+    event.target.parentElement.parentElement.style.setProperty(
+      "--afterOpacity",
+      0
+    );
+    event.target.parentElement.parentElement.style.setProperty(
+      "--afterBottom",
+      "0%"
+    );
   }
 }
 
