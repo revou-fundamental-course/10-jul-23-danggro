@@ -34,15 +34,25 @@ function hitungBMI() {
   const ageIdentity = document.getElementById("age-identity");
 
   //Validasi apakah pengisian input sudah sesuai
-  if (!beratBadan.value || !usia.value || !tinggiBadan.value) {
+  if (
+    !beratBadan.value ||
+    !usia.value ||
+    !tinggiBadan.value ||
+    usia.value < 18
+  ) {
     if (beratBadan.value == "") {
       validation(containerBeratBadan);
     }
     if (usia.value == "") {
+      containerUsia.setAttribute("data-text", "Usia harus diisi");
       validation(containerUsia);
     }
     if (tinggiBadan.value == "") {
       validation(containerTinggiBadan);
+    }
+    if (usia.value < 18 && usia.value) {
+      containerUsia.setAttribute("data-text", "Minimal 18 tahun");
+      validation(containerUsia);
     }
   } else {
     //Perulangan untuk mendapatkan value jenis kelamin
@@ -71,11 +81,6 @@ function hitungBMI() {
     //Perhitungan nilai BMI
     let result = (beratBadan.value / (tinggiBadan.value / 100) ** 2).toFixed(1);
 
-    //Reset value input pada form
-    beratBadan.value = "";
-    usia.value = "";
-    tinggiBadan.value = "";
-
     //Mengganti nilai usia identitas pada BMI display
     ageIdentity.innerHTML = usia.value + " tahun";
 
@@ -103,6 +108,11 @@ function hitungBMI() {
         //Menggeser tampilan ke BMI display
         containerHome.style.transform = "translateX(-100%)";
         resultBMI.style.transform = "translateX(0%)";
+
+        //Reset value input pada form
+        beratBadan.value = "";
+        usia.value = "";
+        tinggiBadan.value = "";
 
         //Menggeser tampilan sampai paling atas
         window.scrollTo(0, 0);
@@ -186,6 +196,14 @@ function validation(container) {
 
 //Fungsi validasi untuk menghilangkan peringatan pada saat input sudah benar
 function removeValidation(event) {
+  if (event.target.id == "usia" && event.target.value < 18) {
+    event.target.parentElement.parentElement.setAttribute(
+      "data-text",
+      "Minimal 18 tahun"
+    );
+    return 0;
+  }
+
   if (event.target.value) {
     event.target.parentElement.parentElement.style.setProperty(
       "--afterOpacity",
