@@ -122,7 +122,6 @@ function hitungBMI() {
 
 //Fungsi sesuai dengan hasil nilai BMI
 function display(valueBMI, textSaran, data, bubble) {
-  console.log(data.color);
   //Define variabel kontainer image dan keterangan pada hasil BMI display
   const containerImage = document.getElementsByClassName(data.elementID);
 
@@ -182,11 +181,7 @@ function kembali() {
 //Fungsi validasi apakah pengisian input sudah benar
 function validation(container) {
   container.style.setProperty("--afterOpacity", 100);
-  if (window.matchMedia("(max-width: 480px)"))
-    return container.style.setProperty("--afterBottom", "13%");
-  if (window.matchMedia("(max-width: 768px)"))
-    return container.style.setProperty("--afterBottom", "12%");
-  container.style.setProperty("--afterBottom", "17%");
+  container.style.setProperty("--afterBottom", "translateY(0%)");
 }
 
 //Fungsi validasi untuk menghilangkan peringatan pada saat input sudah benar
@@ -198,7 +193,7 @@ function removeValidation(event) {
     );
     event.target.parentElement.parentElement.style.setProperty(
       "--afterBottom",
-      "0%"
+      "translateY(40%)"
     );
   }
 }

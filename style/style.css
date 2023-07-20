@@ -10,6 +10,15 @@
   --normal: #83ec94;
   --overweight: #ece883;
   --obesity: #fe9292;
+  --icon-calculator: url("../assets/icons/calculator.svg");
+  --icon-gender: url("../assets/icons/gender.svg");
+  --icon-age: url("../assets/icons/age.svg");
+  --icon-height: url("../assets/icons/height.svg");
+  --icon-weight: url("../assets/icons/weight.svg");
+  --icon-monitor: url("../assets/icons/monitor.svg");
+  --icon-math: url("../assets/icons/math.svg");
+  --icon-size-h1: 40px;
+  --icon-size-h2: 28px;
 }
 
 /* Reset CSS */
@@ -83,6 +92,7 @@ p, li{
   flex-direction: column;
   row-gap: 0.5rem;
   text-align: center;
+  align-items: center;
   padding: 1.5rem 2.25rem;
 }
 
@@ -119,7 +129,7 @@ p, li{
   row-gap: 0.5rem;
 }
 
-#jenis-kelamin, #container-bb, #container-tb{
+#jenis-kelamin,#container-usia, #container-bb, #container-tb{
   flex-grow: 1;
 }
 
@@ -158,6 +168,10 @@ p, li{
 #form-bmi .container-radio input:checked ~ img,
 #form-bmi .container-radio input:checked ~ span {
   opacity: 100%;
+}
+
+#form-bmi label{
+  width: fit-content;
 }
 
 input::-webkit-outer-spin-button,
@@ -245,7 +259,8 @@ input::-webkit-inner-spin-button {
 
 #container-link{
   display: flex;
-  column-gap: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 #container-link a{
@@ -486,9 +501,8 @@ input::-webkit-inner-spin-button {
 }
 #container-bb::after,#container-usia::after,#container-tb::after{
   display: block;
-  position: absolute;
   opacity: var(--afterOpacity, 0);
-  bottom: var(--afterBottom, 0);
+  transform: var(--afterBottom, translateY(40%));;
   width: fit-content;
   padding: 0.4rem 0.6rem;
   background-color: var(--dark-purple);
@@ -498,20 +512,111 @@ input::-webkit-inner-spin-button {
 }
 #container-bb::after {
   content: "Berat badan harus diisi";
-  
 }
 
 #container-usia::after {
   content: "Usia harus diisi";
-  
 }
 
 #container-tb::after {
   content: "Tinggi badan harus diisi";
-  
 }
 
+
+#header-bmi h1,
+#jenis-kelamin h2,
+#container-usia h2,
+#container-bb h2,
+#container-tb h2,
+#fitur h2,
+#rumus h2{
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+#header-bmi h1::before{
+  content: "";
+  background-color: var(--primary);
+}
+
+#jenis-kelamin h2::before,
+#container-usia h2::before,
+#container-bb h2::before,
+#container-tb h2::before,
+#fitur h2::before,
+#rumus h2::before{
+  content: "";
+  background-color: var(--primary);
+  width: var(--icon-size-h2);
+  height: var(--icon-size-h2);
+}
+
+/* Icon Header */
+#header-bmi h1::before{
+  mask: var(--icon-calculator);
+  -webkit-mask: var(--icon-calculator);
+  width: var(--icon-size-h1);
+  height: var(--icon-size-h1);
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+/* Icon Jenis Kelamin */
+#jenis-kelamin h2::before{
+  mask: var(--icon-gender) ;
+  -webkit-mask: var(--icon-gender);
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+/* Icon Usia */
+#container-usia h2::before{
+  mask: var(--icon-age) ;
+  -webkit-mask: var(--icon-age);
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+/* Icon Berat Badan */
+#container-bb h2::before{
+  mask: var(--icon-weight) ;
+  -webkit-mask: var(--icon-weight);
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+/* Icon Tinggi Badan */
+#container-tb h2::before{
+  mask: var(--icon-height) ;
+  -webkit-mask: var(--icon-height);
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+/* Icon Fitur */
+#fitur h2::before{
+  mask: var(--icon-monitor) ;
+  -webkit-mask: var(--icon-monitor);
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+/* Icon Rumus */
+#rumus h2::before{
+  mask: var(--icon-math) ;
+  -webkit-mask: var(--icon-math);
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+/* Tablet Screen */
 @media only screen and (max-width: 768px) {
+  :root{
+    --icon-size-h1: 35px;
+    --icon-size-h2: 26px;
+  }
+
   /* Font */
   h1{
     font-size: 28px;
@@ -559,10 +664,6 @@ input::-webkit-inner-spin-button {
 
   #container-usia{
     flex-grow: 1;
-  }
-
-  #container-bb, #container-tb{
-    padding-bottom: 13%;
   }
 
   #input-radio img {
@@ -638,6 +739,11 @@ input::-webkit-inner-spin-button {
 }
 
 @media only screen and (max-width: 480px) {
+  :root{
+    --icon-size-h1: 30px;
+    --icon-size-h2: 24px;
+  }
+
   /* Font */
   h1{
     font-size: 24px;
@@ -690,9 +796,7 @@ input::-webkit-inner-spin-button {
   #container-usia{
     flex-grow: 1;
   }
-  #container-bb, #container-tb{
-    padding-bottom: 12%;
-  }
+
   #input-radio img {
     width: 60px;
   }
@@ -811,5 +915,14 @@ input::-webkit-inner-spin-button {
     opacity: var(--afterOpacity, 0);
     bottom: var(--afterBottom, 0);
     font-size: 10px;
+  }
+  /* Icons */
+  #jenis-kelamin h2,
+  #container-usia h2,
+  #container-bb h2,
+  #container-tb h2,
+  #fitur h2,
+  #rumus h2{
+    gap: 0.3rem;
   }
 }
